@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Linq.Expressions;
 using System.Reflection;
 using System.Resources;
 
@@ -32,25 +31,6 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Localization
         public static string GetString(string key, params object[] args)
         {
             return string.Format(StringResourceManager.GetString(key, _currentCulture) ?? ErrorResourceManager.GetString(key, _currentCulture) ?? key, args);
-        }
-
-        public static string GetString<T>(Expression<Func<T, string>> propertySelector, params object[] args)
-        {
-            if (propertySelector.Body is not MemberExpression memberExpression)
-                throw new ArgumentException("Expression must be a member access expression");
-
-            var resourceKey = memberExpression.Member.Name;
-            var value = GetString(resourceKey, CultureInfo.CurrentUICulture);
-
-            if (args is { Length: > 0 } && !string.IsNullOrEmpty(value))
-                return string.Format(value, args);
-
-            return value;
-        }
-
-        public static IFormatProvider GetCulture()
-        {
-            return CultureInfo.CurrentUICulture.DateTimeFormat;
-        }
+        } 
     }
 }
