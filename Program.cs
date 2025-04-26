@@ -35,8 +35,8 @@ namespace WispStudios.Docker.ContainerPatcher
             [Option("save-profile", Required = false, HelpText = "Save the parameters passed as a profile for future execution.")]
             public string SaveProfile { get; set; }
 
-            [Option("load-profile", Required = false, HelpText = "Load an existing profile file and execute it.")]
-            public string ExecuteProfile { get; set; }
+            [Option("load-profiles", Required = false, HelpText = "Load a comma separated list of existing profiles and executes them in order.")]
+            public string LoadProfiles { get; set; }
 
             [Option("list-profiles", Required = false, HelpText = "List profiles that currently exist.")]
             public bool? ListProfiles { get; set; }
@@ -112,33 +112,51 @@ namespace WispStudios.Docker.ContainerPatcher
                             }));
                 }
 
-                if (!string.IsNullOrEmpty(opts.ExecuteProfile))
+                if (!string.IsNullOrEmpty(opts.LoadProfiles))
                 {
-                    var execProfilePath = Path.Combine(profilesDir, "./" + optsSaveProfile + ".json");
-                    if (!File.Exists(execProfilePath))
+                    var profileNames = opts.LoadProfiles.Split(',');
+                    foreach (var profile in profileNames)
                     {
-                        Console.WriteLine($"The profile '{opts.ExecuteProfile}' does not exist.");
-                        return;
-                    }
-
-                    try
-                    {
-                        var contents = await File.ReadAllTextAsync(execProfilePath);
-                        var optsProfile = JsonConvert.DeserializeObject<Options>(contents);
-                        if (optsProfile != null)
-                        {
-                            opts = optsProfile;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine($"There was a problem loading profile '{opts.ExecuteProfile}'.");
-                        return;
-                    }
+                        if (await TryExecuteProfileAsync(opts, profilesDir, profile)) return;
+                    } 
                 }
             }
-             
-            var client = new DockerClientConfiguration(
+
+            await Execute(opts);
+        }
+
+        private static async Task<bool> TryExecuteProfileAsync(Options inputOpts, string profilesDir, string profile)
+        {
+            var execProfilePath = Path.Combine(profilesDir, "./" + profile + ".json");
+            if (!File.Exists(execProfilePath))
+            {
+                Console.WriteLine($"The profile '{inputOpts.LoadProfiles}' does not exist.");
+                return false;
+            }
+
+            try
+            {
+                var contents = await File.ReadAllTextAsync(execProfilePath);
+                var optsProfile = JsonConvert.DeserializeObject<Options>(contents);
+                if (optsProfile != null)
+                { 
+                    Console.WriteLine($"Executing profile '{profile}'.");
+                    await Execute(optsProfile);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"There was a problem loading profile '{profile}'.");
+                return false;
+            }
+
+            Console.WriteLine($"There was a problem loading profile '{profile}'.");
+            return false;
+        }
+
+        private static async Task Execute(Options opts)
+        { 
+            using var client = new DockerClientConfiguration(
                     new Uri(string.IsNullOrEmpty(opts.Host) ? "npipe://./pipe/docker_engine" : opts.Host))
                 .CreateClient();
 
