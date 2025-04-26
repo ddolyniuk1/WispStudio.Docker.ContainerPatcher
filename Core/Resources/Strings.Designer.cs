@@ -322,7 +322,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set the language of the application..
+        ///   Looks up a localized string similar to Set the language of the application. (es, fr).
         /// </summary>
         internal static string LanguageHelp {
             get {

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LanguageHelp" xml:space="preserve">
-    <value>Set the language of the application.</value>
+    <value>Set the language of the application. (es, fr)</value>
   </data>
   <data name="ListProfilesHelp" xml:space="preserve">
     <value>List profiles that currently exist.</value>
@@ -175,78 +175,78 @@
     <value>Fatal</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_ConnectedMessage" xml:space="preserve">
-	  <value>Connected to Docker. Target container: {0}</value>
+    <value>Connected to Docker. Target container: {0}</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_FoundContainerMessage" xml:space="preserve">
-	  <value>Found container: {0} ({1})</value>
+    <value>Found container: {0} ({1})</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_CurrentImageMessage" xml:space="preserve">
-	  <value>Current image: {0}</value>
+    <value>Current image: {0}</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully" xml:space="preserve">
-	  <value>Operation completed successfully</value>
+    <value>Operation completed successfully</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage" xml:space="preserve">
-	  <value>Running in REPLACE mode with backup tag: {0}</value>
+    <value>Running in REPLACE mode with backup tag: {0}</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_StoppingContainerMessage" xml:space="preserve">
-	  <value>Stopping container...</value>
+    <value>Stopping container...</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage" xml:space="preserve">
-	  <value>Container stopped</value>
+    <value>Container stopped</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_CreatingBackupMessage" xml:space="preserve">
-	  <value>Creating backup image {0}:{1}</value>
+    <value>Creating backup image {0}:{1}</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_BackupCreatedMessage" xml:space="preserve">
-	  <value>Backup image created</value>
+    <value>Backup image created</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage" xml:space="preserve">
-	  <value>Parsed {0} input paths</value>
+    <value>Parsed {0} input paths</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_CommittingChangesMessage" xml:space="preserve">
-	  <value>Committing changes to {0}:{1}</value>
+    <value>Committing changes to {0}:{1}</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage" xml:space="preserve">
-	  <value>Container changes committed to {0}:{1}</value>
+    <value>Container changes committed to {0}:{1}</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_RestartingContainerMessage" xml:space="preserve">
-	  <value>Restarting container...</value>
+    <value>Restarting container...</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage" xml:space="preserve">
-	  <value>Container restarted</value>
+    <value>Container restarted</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage" xml:space="preserve">
-	  <value>Running in RESTORE mode with tag: {0}</value>
+    <value>Running in RESTORE mode with tag: {0}</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage" xml:space="preserve">
-	  <value>Creating new container from backup image {0}:{1}</value>
+    <value>Creating new container from backup image {0}:{1}</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage" xml:space="preserve">
-	  <value>Removing current container...</value>
+    <value>Removing current container...</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage" xml:space="preserve">
-	  <value>New container created: {0}</value>
+    <value>New container created: {0}</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage" xml:space="preserve">
-	  <value>Starting restored container...</value>
+    <value>Starting restored container...</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_ContainerStartedMessage" xml:space="preserve">
-	  <value>Container started</value>
+    <value>Container started</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage" xml:space="preserve">
-	  <value>Container successfully restored from backup</value>
+    <value>Container successfully restored from backup</value>
   </data>
   <data name="ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage" xml:space="preserve">
-	  <value>Copying {0} files to container at path: {1}</value>
+    <value>Copying {0} files to container at path: {1}</value>
   </data>
   <data name="ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage" xml:space="preserve">
-	  <value>Added to tar: {0} -&gt; {1}</value>
+    <value>Added to tar: {0} -&gt; {1}</value>
   </data>
   <data name="ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage" xml:space="preserve">
-	  <value>Files copied successfully</value>
+    <value>Files copied successfully</value>
   </data>
   <data name="ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage" xml:space="preserve">
-	  <value>Temporary tar file deleted</value>
+    <value>Temporary tar file deleted</value>
   </data>
 </root>
