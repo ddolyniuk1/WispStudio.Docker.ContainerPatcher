@@ -3,7 +3,7 @@
 public enum EStartupCommands
 {
     None, 
-    GeneralError, 
+    InvalidInput, 
     ListProfile,
     LoadProfiles,
     SaveProfile
