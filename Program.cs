@@ -20,6 +20,8 @@ namespace WispStudios.Docker.ContainerPatcher
                 {
                     ResourceProvider.SetCulture(options.Language);
                 }
+
+                Console.WriteLine(Strings.ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage);
             });
 
             await LocalizedParser.ParseArguments<StartupOptions>(args)
