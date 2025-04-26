@@ -45,7 +45,7 @@ namespace WispStudios.Docker.ContainerPatcher
                     await containerPatchManager.Run(opts);
                     break;
                 case EStartupCommands.InvalidInput: 
-                    logger.LogFatal(ResourceProvider.GetString(nameof(Errors.Program_RunWithOptionsAsync_InvalidInput)));
+                    logger.LogFatal(Errors.Program_RunWithOptionsAsync_InvalidInput);
                     return;
                 case EStartupCommands.ListProfile:
                     profileManager.PrintProfilesList();

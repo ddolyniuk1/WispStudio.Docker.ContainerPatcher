@@ -3,7 +3,6 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using WispStudios.Docker.ContainerPatcher.Core.Interfaces;
-using WispStudios.Docker.ContainerPatcher.Core.Localization;
 using WispStudios.Docker.ContainerPatcher.Core.Options;
 using WispStudios.Docker.ContainerPatcher.Core.Resources;
 
@@ -24,11 +23,16 @@ public class ProfileManager : IProfileManager
         }
     }
 
-    private async Task<ExecutionProfile?> ResolveProfileAsync(StartupOptions inputOpts, string profile)
+    /// <summary>
+    /// Resolves a profile from disk, returns null if not found.
+    /// </summary>
+    /// <param name="profile"></param>
+    /// <returns></returns>
+    private async Task<ExecutionProfile?> ResolveProfileAsync(string profile)
     {
         if (ProfileDirectoryPath == null)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError);
             return null;
         }
 
@@ -37,44 +41,44 @@ public class ProfileManager : IProfileManager
             var execProfilePath = Path.Combine(ProfileDirectoryPath, "./" + profile + ".json");
             if (!File.Exists(execProfilePath))
             {
-                _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError), profile));
+                _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError, profile);
                 return null;
             }
 
             var contents = await File.ReadAllTextAsync(execProfilePath);
             var optsProfile = JsonConvert.DeserializeObject<ExecutionProfile>(contents);
 
-            _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_ResolveProfileAsync_ExecutingProfileMessage), profile));
+            _logger.LogInfo(Strings.ProfileManager_ResolveProfileAsync_ExecutingProfileMessage, profile);
              
             return optsProfile;
         }
         catch (NullReferenceException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_NullReferenceException), profile));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_NullReferenceException, profile);
         }
         catch (FileNotFoundException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_FileNotFoundException), profile));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_FileNotFoundException, profile);
         }
         catch (IOException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_IOException), ex.Message));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_IOException, ex.Message);
         }
         catch (UnauthorizedAccessException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException)));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException);
         }
         catch (JsonSerializationException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_JsonSerializationException), ex.Message));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_JsonSerializationException, ex.Message);
         }
         catch (JsonException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_JsonException), ex.Message));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_JsonException, ex.Message);
         }
         catch (Exception)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_GeneralException), profile));
+            _logger.LogError(Errors.ProfileManager_ResolveProfileAsync_GeneralException, profile);
         }
 
         return null;
@@ -84,7 +88,7 @@ public class ProfileManager : IProfileManager
     {
         if (opts.LoadProfiles == null)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError)));
+            _logger.LogError(Errors.ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError);
             return default;
         }
 
@@ -92,7 +96,7 @@ public class ProfileManager : IProfileManager
         var profileNames = opts.LoadProfiles.Split(',');
         foreach (var profile in profileNames)
         {
-            var resolved = await ResolveProfileAsync(opts, profile);
+            var resolved = await ResolveProfileAsync(profile);
             if (resolved != null)
             {
                 list.Add(resolved);
@@ -108,13 +112,13 @@ public class ProfileManager : IProfileManager
     {
         if (ProfileDirectoryPath == null)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError);
             return;
         }
 
         if (opts.SaveProfile == null)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileWasNullError)));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_ProfileWasNullError);
             return;
         }
 
@@ -122,8 +126,8 @@ public class ProfileManager : IProfileManager
 
         if (!match.Success)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1)));
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2)));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1);
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2);
             return;
         }
 
@@ -141,41 +145,41 @@ public class ProfileManager : IProfileManager
         }
         catch (DirectoryNotFoundException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError), ProfileDirectoryPath));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError, ProfileDirectoryPath);
         }
         catch (UnauthorizedAccessException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_UnauthorizedAccessError)));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_UnauthorizedAccessError);
         }
         catch (PathTooLongException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_PathTooLongError)));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_PathTooLongError);
         }
         catch (IOException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_IOException), ex.Message));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_IOException, ex.Message);
         }
         catch (ArgumentException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_InvalidProfileNameError), ex.Message));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_InvalidProfileNameError, ex.Message);
         }
         catch (JsonException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_FailedToSerializeProfileError), ex.Message));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_FailedToSerializeProfileError, ex.Message);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_GeneralException), saveProfileName, ex.Message));
+            _logger.LogError(Errors.ProfileManager_SaveProfileAsync_GeneralException, saveProfileName, ex.Message);
         }
 
-        _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_SaveProfileAsync_SavedProfileMessage), saveProfileName));
+        _logger.LogInfo(Strings.ProfileManager_SaveProfileAsync_SavedProfileMessage, saveProfileName);
     }
 
     public void PrintProfilesList()
     {
         if (ProfileDirectoryPath == null)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError);
             return;
         }
 
@@ -185,12 +189,12 @@ public class ProfileManager : IProfileManager
 
             if (files.Length == 0)
             {
-                _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_NoProfilesFoundError)));
+                _logger.LogError(Errors.ProfileManager_PrintProfilesList_NoProfilesFoundError);
                 return;
             }
 
             var fileNames = files.Select(Path.GetFileNameWithoutExtension).OrderBy(t => t).ToList();
-            _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_PrintProfilesList_CurrentProfilesMessage)));
+            _logger.LogInfo(Strings.ProfileManager_PrintProfilesList_CurrentProfilesMessage);
             foreach (var file in fileNames)
             {
                 _logger.LogInfo(file ?? "unknown");
@@ -198,23 +202,23 @@ public class ProfileManager : IProfileManager
         }
         catch (UnauthorizedAccessException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError)));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError);
         }
         catch (DirectoryNotFoundException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_DirectoryNotFoundError), ProfileDirectoryPath));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_DirectoryNotFoundError, ProfileDirectoryPath);
         }
         catch (PathTooLongException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_PathTooLongError)));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_PathTooLongError);
         }
         catch (IOException ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_IOException), ex.Message));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_IOException, ex.Message);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_GeneralError), ex.Message));
+            _logger.LogError(Errors.ProfileManager_PrintProfilesList_GeneralError, ex.Message);
         }
     }
 
@@ -238,23 +242,23 @@ public class ProfileManager : IProfileManager
         }
         catch (DirectoryNotFoundException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError), profilesDir));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError, profilesDir);
         }
         catch (UnauthorizedAccessException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError), profilesDir));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError, profilesDir);
         }
         catch (PathTooLongException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError), profilesDir));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError, profilesDir);
         }
         catch (NotSupportedException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError), profilesDir));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError, profilesDir);
         }
         catch (IOException)
         {
-            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred), profilesDir));
+            _logger.LogError(Errors.ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred, profilesDir);
         }
 
         return false;
