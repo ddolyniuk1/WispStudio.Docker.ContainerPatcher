@@ -26,6 +26,12 @@ public class StartupOptions : ExecutionProfile
             {
                 return EStartupCommands.LoadProfiles;
             }
+
+            if (string.IsNullOrWhiteSpace(Input) || string.IsNullOrWhiteSpace(Output) ||
+                string.IsNullOrWhiteSpace(Target))
+            {
+                return EStartupCommands.InvalidInput;
+            }
              
             return EStartupCommands.None;
         }

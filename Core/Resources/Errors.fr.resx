@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<root> 
+<root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -59,135 +59,135 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="OutputNullOrEmpty" xml:space="preserve">
-    <value>La ruta de salida debe proporcionarse para el perfil '{0}'.</value>
+    <value>Le chemin de sortie doit être fourni pour le profil '{0}'.</value>
   </data>
   <data name="TargetNullOrEmpty" xml:space="preserve">
-    <value>El contenedor de destino debe proporcionarse para el perfil '{0}'.</value>
+    <value>Le conteneur cible doit être fourni pour le profil '{0}'.</value>
   </data>
   <data name="InputNullOrEmpty" xml:space="preserve">
-    <value>Al menos una ruta de entrada debe proporcionarse para el perfil '{0}'.</value>
+    <value>Au moins un chemin d'entrée doit être fourni pour le profil '{0}'.</value>
   </data>
   <data name="ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError" xml:space="preserve">
-	  <value>Error: El directorio '{0}' no existe. Por favor, créelo primero.</value>
+    <value>Erreur : Le répertoire '{0}' n'existe pas. Veuillez le créer d'abord.</value>
   </data>
   <data name="ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError" xml:space="preserve">
-	  <value>Error: No tienes permiso para crear el directorio de perfiles '{0}'. Intenta ejecutar como administrador.</value>
+    <value>Erreur : Vous n'avez pas la permission de créer le répertoire des profils '{0}'. Essayez d'exécuter en tant qu'administrateur.</value>
   </data>
   <data name="ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError" xml:space="preserve">
-	  <value>Error: El nombre o la ruta del directorio de perfiles '{0}' es demasiado largo para tu sistema operativo.</value>
+    <value>Erreur : Le nom ou le chemin du répertoire des profils '{0}' est trop long pour votre système d'exploitation.</value>
   </data>
   <data name="ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError" xml:space="preserve">
-	  <value>Error: La creación del directorio '{0}' no es compatible.</value>
+    <value>Erreur : La création du répertoire '{0}' n'est pas prise en charge.</value>
   </data>
   <data name="ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred" xml:space="preserve">
-	  <value>Error: Ocurrió un problema al intentar resolver el directorio de perfiles '{0}'</value>
+    <value>Erreur : Un problème est survenu lors de la résolution du répertoire des profils '{0}'</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError" xml:space="preserve">
-	  <value>El directorio de perfiles no se pudo inicializar y la ejecución no puede continuar.</value>
+    <value>Le répertoire des profils n'a pas pu être initialisé et l'exécution ne peut pas continuer.</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_NoProfilesFoundError" xml:space="preserve">
-	  <value>No se encontraron perfiles.</value>
+    <value>Aucun profil trouvé.</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError" xml:space="preserve">
-	  <value>Error: No tienes permiso para acceder al directorio de perfiles. Intenta ejecutar como administrador.</value>
+    <value>Erreur : Vous n'avez pas la permission d'accéder au répertoire des profils. Essayez d'exécuter en tant qu'administrateur.</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_DirectoryNotFoundError" xml:space="preserve">
-	  <value>Error: El directorio de perfiles '{0}' no se encontró o fue eliminado durante la operación.</value>
+    <value>Erreur : Le répertoire des profils '{0}' n'a pas été trouvé ou a été supprimé pendant l'opération.</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_PathTooLongError" xml:space="preserve">
-	  <value>Error: La ruta del directorio de perfiles es demasiado larga para tu sistema operativo.</value>
+    <value>Erreur : Le chemin du répertoire des profils est trop long pour votre système d'exploitation.</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_IOException" xml:space="preserve">
-	  <value>Error: Problema al acceder al directorio de perfiles. {0}</value>
+    <value>Erreur : Problème d'accès au répertoire des profils. {0}</value>
   </data>
   <data name="ProfileManager_PrintProfilesList_GeneralError" xml:space="preserve">
-	  <value>Error: Falló al listar perfiles. {0}</value>
+    <value>Erreur : Échec de la liste des profils. {0}</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_UnauthorizedAccessError" xml:space="preserve">
-	  <value>Error: No tienes permiso para guardar el perfil. Intenta ejecutar como administrador.</value>
+    <value>Erreur : Vous n'avez pas la permission d'enregistrer le profil. Essayez d'exécuter en tant qu'administrateur.</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_PathTooLongError" xml:space="preserve">
-	  <value>Error: El nombre o la ruta del perfil es demasiado largo para tu sistema operativo.</value>
+    <value>Erreur : Le nom ou le chemin du profil est trop long pour votre système d'exploitation.</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_IOException" xml:space="preserve">
-	  <value>Error: No se puede escribir el archivo de perfil. El archivo puede estar en uso por otro proceso. {0}</value>
+    <value>Erreur : Impossible d'écrire le fichier de profil. Le fichier peut être utilisé par un autre processus. {0}</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_InvalidProfileNameError" xml:space="preserve">
-	  <value>Error: Nombre de perfil inválido. Los nombres de perfil no pueden contener caracteres inválidos. {0}</value>
+    <value>Erreur : Nom de profil invalide. Les noms de profil ne peuvent pas contenir de caractères invalides. {0}</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_FailedToSerializeProfileError" xml:space="preserve">
-	  <value>Error: Falló al serializar los datos del perfil. {0}</value>
+    <value>Erreur : Échec de la sérialisation des données du profil. {0}</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_GeneralException" xml:space="preserve">
-	  <value>Error: Falló al guardar el perfil '{0}'. {1}</value>
+    <value>Erreur : Échec de l'enregistrement du profil '{0}'. {1}</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1" xml:space="preserve">
-	  <value>El nombre del perfil no puede ser analizado correctamente.</value>
+    <value>Le nom du profil ne peut pas être analysé correctement.</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2" xml:space="preserve">
-	  <value>El nombre del perfil debe ser un nombre de archivo válido, no puede incluir espacios o puntos, y debe contener al menos un carácter alfanumérico, guiones bajos o guiones</value>
+    <value>Le nom du profil doit être un nom de fichier valide, il ne peut pas inclure d'espaces ou de points, et doit contenir au moins un caractère alphanumérique, des tirets bas ou des traits d'union</value>
   </data>
   <data name="ProfileManager_SaveProfileAsync_ProfileWasNullError" xml:space="preserve">
-	  <value>El perfil de guardado es nulo, algo salió mal.</value>
+    <value>Le profil à enregistrer est nul, quelque chose s'est mal passé.</value>
   </data>
   <data name="ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError" xml:space="preserve">
-	  <value>Los perfiles de carga son nulos, algo salió mal.</value>
+    <value>Les profils à charger sont nuls, quelque chose s'est mal passé.</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_GeneralException" xml:space="preserve">
-	  <value>Error: Falló al cargar el perfil '{0}'. {1}</value>
+    <value>Erreur : Échec du chargement du profil '{0}'. {1}</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_JsonException" xml:space="preserve">
-	  <value>Error: El archivo de perfil contiene JSON inválido. {0}</value>
+    <value>Erreur : Le fichier de profil contient du JSON invalide. {0}</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_JsonSerializationException" xml:space="preserve">
-	  <value>Error: Falló al deserializar los datos del perfil. El formato del perfil puede ser incompatible. {0}</value>
+    <value>Erreur : Échec de la désérialisation des données du profil. Le format du profil peut être incompatible. {0}</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException" xml:space="preserve">
-	  <value>Error: No tienes permiso para leer el archivo de perfil. Intenta ejecutar como administrador.</value>
+    <value>Erreur : Vous n'avez pas la permission de lire le fichier de profil. Essayez d'exécuter en tant qu'administrateur.</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_IOException" xml:space="preserve">
-	  <value>Error: No se puede leer el archivo de perfil. El archivo puede estar en uso por otro proceso. {0}</value>
+    <value>Erreur : Impossible de lire le fichier de profil. Le fichier peut être utilisé par un autre processus. {0}</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_FileNotFoundException" xml:space="preserve">
-	  <value>Error: El archivo de perfil '{0}.json' fue eliminado entre la verificación y la carga.</value>
+    <value>Erreur : Le fichier de profil '{0}.json' a été supprimé entre la vérification et le chargement.</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_NullReferenceException" xml:space="preserve">
-	  <value>El perfil '{0}' es nulo, la ejecución no continuará en este perfil.</value>
+    <value>Le profil '{0}' est nul, l'exécution ne continuera pas sur ce profil.</value>
   </data>
   <data name="ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError" xml:space="preserve">
-	  <value>El perfil '{0}' no existe.</value>
+    <value>Le profil '{0}' n'existe pas.</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError" xml:space="preserve">
-	  <value>Error: Contenedor '{0}' no encontrado.</value>
+    <value>Erreur : Conteneur '{0}' introuvable.</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError" xml:space="preserve">
-	  <value>Error: Se debe especificar --replace-tag o --restore-tag.</value>
+    <value>Erreur : Soit --replace-tag ou --restore-tag doit être spécifié.</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_HttpRequestException" xml:space="preserve">
-	  <value>Falló al conectar con Docker en {0}: {1}</value>
+    <value>Échec de la connexion à Docker à {0} : {1}</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_DockerApiException" xml:space="preserve">
-	  <value>Error de API de Docker: {0} (Código de estado: {1})</value>
+    <value>Erreur de l'API Docker : {0} (Code d'état : {1})</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_GeneralException" xml:space="preserve">
-	  <value>Error inesperado al conectar con Docker: {0}</value>
+    <value>Erreur inattendue lors de la connexion à Docker : {0}</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_InputOutputRequiredError" xml:space="preserve">
-	  <value>Error: --input y --output son obligatorios en el modo de reemplazo</value>
+    <value>Erreur : --input et --output sont requis en mode remplacement</value>
   </data>
   <data name="ContainerPatchAgent_ParseInputPaths_WarningPathNotFound" xml:space="preserve">
-	  <value>Advertencia: Ruta no encontrada: {0}</value>
+    <value>Avertissement : Chemin non trouvé : {0}</value>
   </data>
   <data name="ContainerPatchAgent_RestoreMode_BackupImageNotFoundError" xml:space="preserve">
-	  <value>Error: Imagen de respaldo {0}:{1} no encontrada.</value>
+    <value>Erreur : Image de sauvegarde {0}:{1} introuvable.</value>
   </data>
   <data name="ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError" xml:space="preserve">
-	  <value>Error: No se encontraron rutas de entrada válidas.</value>
+    <value>Erreur : Aucun chemin d'entrée valide trouvé.</value>
   </data>
   <data name="ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError" xml:space="preserve">
-	  <value>El host '{0}' no es un URI válido</value>
+    <value>L'hôte '{0}' n'est pas une URI valide</value>
   </data>
-    <data name="Program_RunWithOptionsAsync_InvalidInput" xml:space="preserve">
-    <value>Entrada inválida, por favor utilice --help para más detalles.</value>
+  <data name="Program_RunWithOptionsAsync_InvalidInput" xml:space="preserve">
+    <value>Entrée invalide, veuillez utiliser --help pour plus de détails.</value>
   </data>
 </root>

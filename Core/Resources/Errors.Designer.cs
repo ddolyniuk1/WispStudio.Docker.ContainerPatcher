@@ -439,6 +439,15 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid input, please use --help for more details..
+        /// </summary>
+        internal static string Program_RunWithOptionsAsync_InvalidInput {
+            get {
+                return ResourceManager.GetString("Program_RunWithOptionsAsync_InvalidInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The target container must be provided for profile &apos;{0}&apos;..
         /// </summary>
         internal static string TargetNullOrEmpty {

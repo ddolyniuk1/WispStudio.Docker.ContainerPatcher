@@ -246,4 +246,7 @@
   <data name="ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError" xml:space="preserve">
 	  <value>The host '{0}' is not a valid URI</value>
   </data>
+  <data name="Program_RunWithOptionsAsync_InvalidInput" xml:space="preserve">
+	  <value>Invalid input, please use --help for more details.</value>
+  </data>
 </root>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LanguageHelp" xml:space="preserve">
+    <value>Définir la langue de l'application.</value>
+  </data>
+  <data name="ListProfilesHelp" xml:space="preserve">
+    <value>Lister les profils qui existent actuellement.</value>
+  </data>
+  <data name="LoadProfilesHelp" xml:space="preserve">
+    <value>Charger une liste de profils existants séparés par des virgules et les exécuter dans l'ordre.</value>
+  </data>
+  <data name="SaveProfileHelp" xml:space="preserve">
+    <value>Enregistrer les paramètres transmis en tant que profil pour une exécution future.</value>
+  </data>
+  <data name="InputHelp" xml:space="preserve">
+    <value>Liste CSV de fichiers ou répertoires à transférer.</value>
+  </data>
+  <data name="OutputHelp" xml:space="preserve">
+    <value>Chemin de sortie à l'intérieur du conteneur cible.</value>
+  </data>
+  <data name="TargetHelp" xml:space="preserve">
+    <value>Nom ou identifiant du conteneur cible.</value>
+  </data>
+  <data name="HostHelp" xml:space="preserve">
+    <value>Adresse de l'hôte cible.</value>
+  </data>
+  <data name="ReplaceTagHelp" xml:space="preserve">
+    <value>Tag de sauvegarde pour enregistrer l'état original du conteneur.</value>
+  </data>
+  <data name="RestoreTagHelp" xml:space="preserve">
+    <value>Tag à restaurer (revenir à la version de sauvegarde).</value>
+  </data>
+  <data name="Example1Help" xml:space="preserve">
+    <value>Sauvegarder et modifier un conteneur.</value>
+  </data>
+  <data name="Example2Help" xml:space="preserve">
+    <value>Restaurer un conteneur à partir d'une sauvegarde.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_CurrentProfilesMessage" xml:space="preserve">
+    <value>Profils actuels :</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_SavedProfileMessage" xml:space="preserve">
+    <value>Profil '{0}' enregistré avec succès.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_ExecutingProfileMessage" xml:space="preserve">
+    <value>Exécution du profil '{0}'.</value>
+  </data>
+  <data name="LogType_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LogType_Warn" xml:space="preserve">
+    <value>Avert</value>
+  </data>
+  <data name="LogType_Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="LogType_Fatal" xml:space="preserve">
+    <value>Fatal</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ConnectedMessage" xml:space="preserve">
+    <value>Connecté à Docker. Conteneur cible : {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_FoundContainerMessage" xml:space="preserve">
+    <value>Conteneur trouvé : {0} ({1})</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_CurrentImageMessage" xml:space="preserve">
+    <value>Image actuelle : {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully" xml:space="preserve">
+    <value>Opération terminée avec succès</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage" xml:space="preserve">
+    <value>Exécution en mode REMPLACEMENT avec tag de sauvegarde : {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_StoppingContainerMessage" xml:space="preserve">
+    <value>Arrêt du conteneur...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage" xml:space="preserve">
+    <value>Conteneur arrêté</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CreatingBackupMessage" xml:space="preserve">
+    <value>Création de l'image de sauvegarde {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_BackupCreatedMessage" xml:space="preserve">
+    <value>Image de sauvegarde créée</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage" xml:space="preserve">
+    <value>Analysé {0} chemins d'entrée</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CommittingChangesMessage" xml:space="preserve">
+    <value>Validation des modifications vers {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage" xml:space="preserve">
+    <value>Modifications du conteneur validées vers {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RestartingContainerMessage" xml:space="preserve">
+    <value>Redémarrage du conteneur...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage" xml:space="preserve">
+    <value>Conteneur redémarré</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage" xml:space="preserve">
+    <value>Exécution en mode RESTAURATION avec tag : {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage" xml:space="preserve">
+    <value>Création d'un nouveau conteneur à partir de l'image de sauvegarde {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage" xml:space="preserve">
+    <value>Suppression du conteneur actuel...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage" xml:space="preserve">
+    <value>Nouveau conteneur créé : {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage" xml:space="preserve">
+    <value>Démarrage du conteneur restauré...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerStartedMessage" xml:space="preserve">
+    <value>Conteneur démarré</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage" xml:space="preserve">
+    <value>Conteneur restauré avec succès à partir de la sauvegarde</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage" xml:space="preserve">
+    <value>Copie de {0} fichiers vers le conteneur au chemin : {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage" xml:space="preserve">
+    <value>Ajouté au tar : {0} -&gt; {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage" xml:space="preserve">
+    <value>Fichiers copiés avec succès</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage" xml:space="preserve">
+    <value>Fichier tar temporaire supprimé</value>
+  </data>
+</root>

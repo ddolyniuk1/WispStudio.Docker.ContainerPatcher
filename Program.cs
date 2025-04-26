@@ -5,6 +5,7 @@ using WispStudios.Docker.ContainerPatcher.Core.Extensions;
 using WispStudios.Docker.ContainerPatcher.Core.Interfaces;
 using WispStudios.Docker.ContainerPatcher.Core.Localization;
 using WispStudios.Docker.ContainerPatcher.Core.Options;
+using WispStudios.Docker.ContainerPatcher.Core.Resources;
 
 namespace WispStudios.Docker.ContainerPatcher
 {
@@ -34,12 +35,16 @@ namespace WispStudios.Docker.ContainerPatcher
            
             var profileManager = container.Resolve<IProfileManager>(); 
             var containerPatchManager = container.Resolve<IContainerPatchManager>();
+            var logger = container.Resolve<ILogger>();
 
             switch (opts.StartupCommand)
             {
                 case EStartupCommands.None:
                     await containerPatchManager.Run(opts);
-                    break; 
+                    break;
+                case EStartupCommands.InvalidInput: 
+                    logger.LogFatal(ResourceProvider.GetString(nameof(Errors.Program_RunWithOptionsAsync_InvalidInput)));
+                    return;
                 case EStartupCommands.ListProfile:
                     profileManager.PrintProfilesList();
                     break;
