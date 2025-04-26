@@ -72,7 +72,9 @@ namespace WispStudios.Docker.ContainerPatcher
             await Parser.Default.ParseArguments<Options>(args)
                 .WithParsedAsync(async opts => await RunWithOptions(opts));
         }
+
         private const string ProfilesDirectory = "./profiles";
+
         private static async Task RunWithOptions(Options opts)
         {
             if (TryGetProfilesDirectory(out var profilesDir))
@@ -85,56 +87,71 @@ namespace WispStudios.Docker.ContainerPatcher
 
                 if (opts.ListProfiles == true)
                 {
-                    var files = Directory.GetFiles(profilesDir, "*.json", SearchOption.TopDirectoryOnly);
-
-                    if (files.Length == 0)
-                    {
-                        Console.WriteLine("No profiles found.");
-                        return;
-                    }
-
-                    var fileNames = files.Select(Path.GetFileNameWithoutExtension).OrderBy(t => t).ToList();
-                    Console.WriteLine("Current Profiles:");
-                    foreach (var file in fileNames)
-                    {
-                        Console.WriteLine(file);
-                    }
-
+                    CmdListProfiles(profilesDir);
                     return;
                 }
-
-                var optsSaveProfile = opts.SaveProfile;
-                if (!string.IsNullOrEmpty(optsSaveProfile))
+                 
+                if (!string.IsNullOrEmpty(opts.SaveProfile))
                 {
-                    opts.SaveProfile = string.Empty;
-                    await File.WriteAllTextAsync(Path.Combine(profilesDir, "./" + optsSaveProfile + ".json"),
-                        JsonConvert.SerializeObject(opts, Formatting.Indented,
-                            new JsonSerializerSettings()
-                            {
-                                NullValueHandling = NullValueHandling.Ignore, TypeNameHandling = TypeNameHandling.None
-                            }));
+                    await CmdSaveProfileAsync(opts, profilesDir, opts.SaveProfile);
+                    return;
                 }
 
                 if (!string.IsNullOrEmpty(opts.LoadProfiles))
                 {
-                    var profileNames = opts.LoadProfiles.Split(',');
-                    foreach (var profile in profileNames)
-                    {
-                        if (await TryExecuteProfileAsync(opts, profilesDir, profile)) return;
-                    } 
+                    await CmdLoadProfilesAsync(opts, profilesDir);
+                    return;
                 }
             }
 
             await Execute(opts);
         }
 
-        private static async Task<bool> TryExecuteProfileAsync(Options inputOpts, string profilesDir, string profile)
+        private static async Task CmdLoadProfilesAsync(Options opts, string profilesDir)
+        {
+            var profileNames = opts.LoadProfiles.Split(',');
+            foreach (var profile in profileNames)
+            {
+                await TryExecuteProfileAsync(opts, profilesDir, profile);
+            }
+        }
+
+        private static async Task CmdSaveProfileAsync(Options opts, string profilesDir, string optsSaveProfile)
+        {
+            opts.SaveProfile = string.Empty;
+            await File.WriteAllTextAsync(Path.Combine(profilesDir, "./" + optsSaveProfile + ".json"),
+                JsonConvert.SerializeObject(opts, Formatting.Indented,
+                    new JsonSerializerSettings()
+                    {
+                        NullValueHandling = NullValueHandling.Ignore, TypeNameHandling = TypeNameHandling.None
+                    }));
+        }
+
+        private static void CmdListProfiles(string profilesDir)
+        {
+            var files = Directory.GetFiles(profilesDir, "*.json", SearchOption.TopDirectoryOnly);
+
+            if (files.Length == 0)
+            {
+                Console.WriteLine("No profiles found.");
+                return;
+            }
+
+            var fileNames = files.Select(Path.GetFileNameWithoutExtension).OrderBy(t => t).ToList();
+            Console.WriteLine("Current Profiles:");
+            foreach (var file in fileNames)
+            {
+                Console.WriteLine(file);
+            }
+        }
+
+        private static async Task TryExecuteProfileAsync(Options inputOpts, string profilesDir, string profile)
         {
             var execProfilePath = Path.Combine(profilesDir, "./" + profile + ".json");
             if (!File.Exists(execProfilePath))
             {
                 Console.WriteLine($"The profile '{inputOpts.LoadProfiles}' does not exist.");
-                return false;
+                return;
             }
 
             try
@@ -150,11 +167,10 @@ namespace WispStudios.Docker.ContainerPatcher
             catch (Exception e)
             {
                 Console.WriteLine($"There was a problem loading profile '{profile}'.");
-                return false;
+                return;
             }
 
             Console.WriteLine($"There was a problem loading profile '{profile}'.");
-            return false;
         }
 
         private static async Task Execute(Options opts)
