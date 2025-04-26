@@ -3,17 +3,21 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using WispStudios.Docker.ContainerPatcher.Core.Interfaces;
+using WispStudios.Docker.ContainerPatcher.Core.Localization;
 using WispStudios.Docker.ContainerPatcher.Core.Options;
+using WispStudios.Docker.ContainerPatcher.Core.Resources;
 
 namespace WispStudios.Docker.ContainerPatcher.Core.Managers;
 
 public class ProfileManager : IProfileManager
 {
+    private readonly ILogger _logger;
     private const string ProfilesDirectoryRelativePath = "./profiles";
     public string? ProfileDirectoryPath { get; }
 
-    public ProfileManager()
+    public ProfileManager(ILogger logger)
     {
+        _logger = logger;
         if (TryInitializeProfileDirectoryPath(out var directory))
         {
             ProfileDirectoryPath = directory;
@@ -24,7 +28,7 @@ public class ProfileManager : IProfileManager
     {
         if (ProfileDirectoryPath == null)
         {
-            Console.WriteLine("The profiles directory failed to initialize and execution cannot continue.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
             return null;
         }
 
@@ -33,49 +37,44 @@ public class ProfileManager : IProfileManager
             var execProfilePath = Path.Combine(ProfileDirectoryPath, "./" + profile + ".json");
             if (!File.Exists(execProfilePath))
             {
-                Console.WriteLine($"The profile '{inputOpts.LoadProfiles}' does not exist.");
+                _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError), profile));
                 return null;
             }
 
             var contents = await File.ReadAllTextAsync(execProfilePath);
             var optsProfile = JsonConvert.DeserializeObject<ExecutionProfile>(contents);
 
-            Console.WriteLine($"Executing profile '{profile}'.");
-
-            if (optsProfile == null)
-            {
-                throw new NullReferenceException($"The profile '{profile}' is null, execution will not continue on this profile.");
-            }
-
+            _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_ResolveProfileAsync_ExecutingProfileMessage), profile));
+             
             return optsProfile;
         }
-        catch (NullReferenceException nullReferenceException)
+        catch (NullReferenceException)
         {
-            Console.WriteLine(nullReferenceException.Message);
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_NullReferenceException), profile));
         }
         catch (FileNotFoundException)
         {
-            Console.WriteLine($"Error: Profile file '{profile}.json' was deleted between check and load.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_FileNotFoundException), profile));
         }
         catch (IOException ex)
         {
-            Console.WriteLine($"Error: Unable to read profile file. The file may be in use by another process. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_IOException), ex.Message));
         }
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine($"Error: You don't have permission to read the profile file. Try running as administrator.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException)));
         }
         catch (JsonSerializationException ex)
         {
-            Console.WriteLine($"Error: Failed to deserialize profile data. The profile format may be incompatible. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_JsonSerializationException), ex.Message));
         }
         catch (JsonException ex)
         {
-            Console.WriteLine($"Error: Profile file contains invalid JSON. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_JsonException), ex.Message));
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            Console.WriteLine($"Error: Failed to load profile '{profile}'. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ResolveProfileAsync_GeneralException), profile));
         }
 
         return null;
@@ -85,7 +84,7 @@ public class ProfileManager : IProfileManager
     {
         if (opts.LoadProfiles == null)
         {
-            Console.WriteLine("The load profiles are null, something went wrong.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError)));
             return default;
         }
 
@@ -109,13 +108,13 @@ public class ProfileManager : IProfileManager
     {
         if (ProfileDirectoryPath == null)
         {
-            Console.WriteLine("The profiles directory failed to initialize and execution cannot continue.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
             return;
         }
 
         if (opts.SaveProfile == null)
         {
-            Console.WriteLine("The save profile is null, something went wrong.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileWasNullError)));
             return;
         }
 
@@ -123,8 +122,8 @@ public class ProfileManager : IProfileManager
 
         if (!match.Success)
         {
-            Console.WriteLine("The profile name cannot be parsed correctly.");
-            Console.WriteLine("The profile name must be a valid file name, it cannot include spaces or periods, and must contain at least one character of alphanumeric, underscores, or hyphens");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1)));
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2)));
             return;
         }
 
@@ -142,39 +141,41 @@ public class ProfileManager : IProfileManager
         }
         catch (DirectoryNotFoundException)
         {
-            Console.WriteLine($"Error: Directory '{ProfileDirectoryPath}' does not exist. Please create it first.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError), ProfileDirectoryPath));
         }
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine($"Error: You don't have permission to save the profile. Try running as administrator.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_UnauthorizedAccessError)));
         }
         catch (PathTooLongException)
         {
-            Console.WriteLine($"Error: The profile name or path is too long for your operating system.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_PathTooLongError)));
         }
         catch (IOException ex)
         {
-            Console.WriteLine($"Error: Unable to write profile file. The file may be in use by another process. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_IOException), ex.Message));
         }
         catch (ArgumentException ex)
         {
-            Console.WriteLine($"Error: Invalid profile name. Profile names can't contain invalid characters. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_InvalidProfileNameError), ex.Message));
         }
         catch (JsonException ex)
         {
-            Console.WriteLine($"Error: Failed to serialize profile data. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_FailedToSerializeProfileError), ex.Message));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error: Failed to save profile '{saveProfileName}'. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_SaveProfileAsync_GeneralException), saveProfileName, ex.Message));
         }
+
+        _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_SaveProfileAsync_SavedProfileMessage), saveProfileName));
     }
 
     public void PrintProfilesList()
     {
         if (ProfileDirectoryPath == null)
         {
-            Console.WriteLine("The profiles directory failed to initialize and execution cannot continue.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError)));
             return;
         }
 
@@ -184,74 +185,76 @@ public class ProfileManager : IProfileManager
 
             if (files.Length == 0)
             {
-                Console.WriteLine("No profiles found.");
+                _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_NoProfilesFoundError)));
                 return;
             }
 
             var fileNames = files.Select(Path.GetFileNameWithoutExtension).OrderBy(t => t).ToList();
-            Console.WriteLine("Current Profiles:");
+            _logger.LogInfo(ResourceProvider.GetString(nameof(Strings.ProfileManager_PrintProfilesList_CurrentProfilesMessage)));
             foreach (var file in fileNames)
             {
-                Console.WriteLine(file);
+                _logger.LogInfo(file ?? "unknown");
             }
         }
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine($"Error: You don't have permission to access the profiles directory. Try running as administrator.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError)));
         }
         catch (DirectoryNotFoundException)
         {
-            Console.WriteLine($"Error: The profiles directory '{ProfileDirectoryPath}' was not found or was removed during operation.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_DirectoryNotFoundError), ProfileDirectoryPath));
         }
         catch (PathTooLongException)
         {
-            Console.WriteLine($"Error: The profiles directory path is too long for your operating system.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_PathTooLongError)));
         }
         catch (IOException ex)
         {
-            Console.WriteLine($"Error: Problem accessing profiles directory. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_IOException), ex.Message));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error: Failed to list profiles. {ex.Message}");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_PrintProfilesList_GeneralError), ex.Message));
         }
     }
 
-    private static bool TryInitializeProfileDirectoryPath(out string? profilesDir)
+    private bool TryInitializeProfileDirectoryPath(out string? profilesDir)
     {
-        profilesDir = null;
+        profilesDir = "<empty>";
         try
         {
             var executableDir = Path.GetDirectoryName(
                 Assembly.GetExecutingAssembly().Location);
 
-            profilesDir = Path.Combine(executableDir ?? AppDomain.CurrentDomain.BaseDirectory, ProfilesDirectoryRelativePath);
+            if (string.IsNullOrEmpty(executableDir))
+            {
+                executableDir = AppContext.BaseDirectory;
+            }
+
+            profilesDir = Path.Combine(executableDir, ProfilesDirectoryRelativePath);
 
             Directory.CreateDirectory(profilesDir);
             return true;
         }
         catch (DirectoryNotFoundException)
         {
-            Console.WriteLine($"Error: Directory '{profilesDir}' does not exist. Please create it first.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError), profilesDir));
         }
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine(
-                $"Error: You don't have permission to create the profiles directory '{profilesDir}'. Try running as administrator.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError), profilesDir));
         }
         catch (PathTooLongException)
         {
-            Console.WriteLine(
-                $"Error: The profiles directory '{profilesDir}' name or path is too long for your operating system.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError), profilesDir));
         }
         catch (NotSupportedException)
         {
-            Console.WriteLine(
-                $"Error: Creating the directory '{profilesDir}' is not supported.");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError), profilesDir));
         }
-        catch (IOException ex)
+        catch (IOException)
         {
-            Console.WriteLine($"Error: A problem occurred attempting to resolve the profile directory '{profilesDir}'");
+            _logger.LogError(ResourceProvider.GetString(nameof(Errors.ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred), profilesDir));
         }
 
         return false;

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OutputNullOrEmpty" xml:space="preserve">
+    <value>The output path must be provided for profile '{0}'.</value>
+  </data>
+  <data name="TargetNullOrEmpty" xml:space="preserve">
+    <value>The target container must be provided for profile '{0}'.</value>
+  </data>
+  <data name="InputNullOrEmpty" xml:space="preserve">
+    <value>At least one input path must be provided for profile '{0}'.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError" xml:space="preserve">
+	  <value>Error: Directory '{0}' does not exist. Please create it first.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError" xml:space="preserve">
+	  <value>Error: You don't have permission to create the profiles directory '{0}'. Try running as administrator.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError" xml:space="preserve">
+	  <value>Error: The profiles directory '{0}' name or path is too long for your operating system.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError" xml:space="preserve">
+	  <value>Error: Creating the directory '{0}' is not supported.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred" xml:space="preserve">
+	  <value>Error: A problem occurred attempting to resolve the profile directory '{0}'</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError" xml:space="preserve">
+	  <value>The profiles directory failed to initialize and execution cannot continue.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_NoProfilesFoundError" xml:space="preserve">
+	  <value>No profiles found.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError" xml:space="preserve">
+	  <value>Error: You don't have permission to access the profiles directory. Try running as administrator.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_DirectoryNotFoundError" xml:space="preserve">
+	  <value>Error: The profiles directory '{0}' was not found or was removed during operation.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_PathTooLongError" xml:space="preserve">
+	  <value>Error: The profiles directory path is too long for your operating system.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_IOException" xml:space="preserve">
+	  <value>Error: Problem accessing profiles directory. {0}</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_GeneralError" xml:space="preserve">
+	  <value>Error: Failed to list profiles. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_UnauthorizedAccessError" xml:space="preserve">
+	  <value>Error: You don't have permission to save the profile. Try running as administrator.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_PathTooLongError" xml:space="preserve">
+	  <value>Error: The profile name or path is too long for your operating system.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_IOException" xml:space="preserve">
+	  <value>Error: Unable to write profile file. The file may be in use by another process. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_InvalidProfileNameError" xml:space="preserve">
+	  <value>Error: Invalid profile name. Profile names can't contain invalid characters. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_FailedToSerializeProfileError" xml:space="preserve">
+	  <value>Error: Failed to serialize profile data. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_GeneralException" xml:space="preserve">
+	  <value>Error: Failed to save profile '{0}'. {1}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1" xml:space="preserve">
+	  <value>The profile name cannot be parsed correctly.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2" xml:space="preserve">
+	  <value>The profile name must be a valid file name, it cannot include spaces or periods, and must contain at least one character of alphanumeric, underscores, or hyphens</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileWasNullError" xml:space="preserve">
+	  <value>The save profile is null, something went wrong.</value>
+  </data>
+  <data name="ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError" xml:space="preserve">
+	  <value>The load profiles are null, something went wrong.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_GeneralException" xml:space="preserve">
+	  <value>Error: Failed to load profile '{0}'. {1}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_JsonException" xml:space="preserve">
+	  <value>Error: Profile file contains invalid JSON. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_JsonSerializationException" xml:space="preserve">
+	  <value>Error: Failed to deserialize profile data. The profile format may be incompatible. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException" xml:space="preserve">
+	  <value>Error: You don't have permission to read the profile file. Try running as administrator.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_IOException" xml:space="preserve">
+	  <value>Error: Unable to read profile file. The file may be in use by another process. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_FileNotFoundException" xml:space="preserve">
+	  <value>Error: Profile file '{0}.json' was deleted between check and load.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_NullReferenceException" xml:space="preserve">
+	  <value>The profile '{0}' is null, execution will not continue on this profile.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError" xml:space="preserve">
+	  <value>The profile '{0}' does not exist.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError" xml:space="preserve">
+	  <value>Error: Container '{0}' not found.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError" xml:space="preserve">
+	  <value>Error: Either --replace-tag or --restore-tag must be specified.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_HttpRequestException" xml:space="preserve">
+	  <value>Failed to connect to Docker at {0}: {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_DockerApiException" xml:space="preserve">
+	  <value>Docker API error: {0} (Status code: {1})</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_GeneralException" xml:space="preserve">
+	  <value>Unexpected error connecting to Docker: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_InputOutputRequiredError" xml:space="preserve">
+	  <value>Error: --input and --output are required in replace mode</value>
+  </data>
+  <data name="ContainerPatchAgent_ParseInputPaths_WarningPathNotFound" xml:space="preserve">
+	  <value>Warning: Path not found: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_BackupImageNotFoundError" xml:space="preserve">
+	  <value>Error: Backup image {0}:{1} not found.</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError" xml:space="preserve">
+	  <value>Error: No valid input paths found.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError" xml:space="preserve">
+	  <value>The host '{0}' is not a valid URI</value>
+  </data>
+</root>

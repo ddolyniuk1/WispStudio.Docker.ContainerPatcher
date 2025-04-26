@@ -2,7 +2,7 @@
 
 public enum EStartupCommands
 {
-    None,
+    None, 
     ListProfile,
     LoadProfiles,
     SaveProfile

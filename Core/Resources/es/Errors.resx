@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OutputNullOrEmpty" xml:space="preserve">
+    <value>La ruta de salida debe proporcionarse para el perfil '{0}'.</value>
+  </data>
+  <data name="TargetNullOrEmpty" xml:space="preserve">
+    <value>El contenedor de destino debe proporcionarse para el perfil '{0}'.</value>
+  </data>
+  <data name="InputNullOrEmpty" xml:space="preserve">
+    <value>Al menos una ruta de entrada debe proporcionarse para el perfil '{0}'.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError" xml:space="preserve">
+	  <value>Error: El directorio '{0}' no existe. Por favor, créelo primero.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError" xml:space="preserve">
+	  <value>Error: No tienes permiso para crear el directorio de perfiles '{0}'. Intenta ejecutar como administrador.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError" xml:space="preserve">
+	  <value>Error: El nombre o la ruta del directorio de perfiles '{0}' es demasiado largo para tu sistema operativo.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError" xml:space="preserve">
+	  <value>Error: La creación del directorio '{0}' no es compatible.</value>
+  </data>
+  <data name="ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred" xml:space="preserve">
+	  <value>Error: Ocurrió un problema al intentar resolver el directorio de perfiles '{0}'</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError" xml:space="preserve">
+	  <value>El directorio de perfiles no se pudo inicializar y la ejecución no puede continuar.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_NoProfilesFoundError" xml:space="preserve">
+	  <value>No se encontraron perfiles.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError" xml:space="preserve">
+	  <value>Error: No tienes permiso para acceder al directorio de perfiles. Intenta ejecutar como administrador.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_DirectoryNotFoundError" xml:space="preserve">
+	  <value>Error: El directorio de perfiles '{0}' no se encontró o fue eliminado durante la operación.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_PathTooLongError" xml:space="preserve">
+	  <value>Error: La ruta del directorio de perfiles es demasiado larga para tu sistema operativo.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_IOException" xml:space="preserve">
+	  <value>Error: Problema al acceder al directorio de perfiles. {0}</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_GeneralError" xml:space="preserve">
+	  <value>Error: Falló al listar perfiles. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_UnauthorizedAccessError" xml:space="preserve">
+	  <value>Error: No tienes permiso para guardar el perfil. Intenta ejecutar como administrador.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_PathTooLongError" xml:space="preserve">
+	  <value>Error: El nombre o la ruta del perfil es demasiado largo para tu sistema operativo.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_IOException" xml:space="preserve">
+	  <value>Error: No se puede escribir el archivo de perfil. El archivo puede estar en uso por otro proceso. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_InvalidProfileNameError" xml:space="preserve">
+	  <value>Error: Nombre de perfil inválido. Los nombres de perfil no pueden contener caracteres inválidos. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_FailedToSerializeProfileError" xml:space="preserve">
+	  <value>Error: Falló al serializar los datos del perfil. {0}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_GeneralException" xml:space="preserve">
+	  <value>Error: Falló al guardar el perfil '{0}'. {1}</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1" xml:space="preserve">
+	  <value>El nombre del perfil no puede ser analizado correctamente.</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2" xml:space="preserve">
+	  <value>El nombre del perfil debe ser un nombre de archivo válido, no puede incluir espacios o puntos, y debe contener al menos un carácter alfanumérico, guiones bajos o guiones</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_ProfileWasNullError" xml:space="preserve">
+	  <value>El perfil de guardado es nulo, algo salió mal.</value>
+  </data>
+  <data name="ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError" xml:space="preserve">
+	  <value>Los perfiles de carga son nulos, algo salió mal.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_GeneralException" xml:space="preserve">
+	  <value>Error: Falló al cargar el perfil '{0}'. {1}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_JsonException" xml:space="preserve">
+	  <value>Error: El archivo de perfil contiene JSON inválido. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_JsonSerializationException" xml:space="preserve">
+	  <value>Error: Falló al deserializar los datos del perfil. El formato del perfil puede ser incompatible. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException" xml:space="preserve">
+	  <value>Error: No tienes permiso para leer el archivo de perfil. Intenta ejecutar como administrador.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_IOException" xml:space="preserve">
+	  <value>Error: No se puede leer el archivo de perfil. El archivo puede estar en uso por otro proceso. {0}</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_FileNotFoundException" xml:space="preserve">
+	  <value>Error: El archivo de perfil '{0}.json' fue eliminado entre la verificación y la carga.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_NullReferenceException" xml:space="preserve">
+	  <value>El perfil '{0}' es nulo, la ejecución no continuará en este perfil.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError" xml:space="preserve">
+	  <value>El perfil '{0}' no existe.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError" xml:space="preserve">
+	  <value>Error: Contenedor '{0}' no encontrado.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError" xml:space="preserve">
+	  <value>Error: Se debe especificar --replace-tag o --restore-tag.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_HttpRequestException" xml:space="preserve">
+	  <value>Falló al conectar con Docker en {0}: {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_DockerApiException" xml:space="preserve">
+	  <value>Error de API de Docker: {0} (Código de estado: {1})</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_GeneralException" xml:space="preserve">
+	  <value>Error inesperado al conectar con Docker: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_InputOutputRequiredError" xml:space="preserve">
+	  <value>Error: --input y --output son obligatorios en el modo de reemplazo</value>
+  </data>
+  <data name="ContainerPatchAgent_ParseInputPaths_WarningPathNotFound" xml:space="preserve">
+	  <value>Advertencia: Ruta no encontrada: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_BackupImageNotFoundError" xml:space="preserve">
+	  <value>Error: Imagen de respaldo {0}:{1} no encontrada.</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError" xml:space="preserve">
+	  <value>Error: No se encontraron rutas de entrada válidas.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError" xml:space="preserve">
+	  <value>El host '{0}' no es un URI válido</value>
+  </data>
+</root>

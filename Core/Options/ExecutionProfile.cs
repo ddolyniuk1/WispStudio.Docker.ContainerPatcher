@@ -5,29 +5,37 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Options;
 
 public class ExecutionProfile
 {
-    [Option('i', "input", Required = false, HelpText = "CSV list of files or directories to transfer")]
+    public override string ToString()
+    {
+        return Name ?? "<empty>";
+    }
+
+    [Option('i', "input", Required = false, HelpText = "ResourceKey:InputHelp")]
     public string? Input { get; set; }
 
-    [Option('o', "output", Required = false, HelpText = "Target path in the container")]
+    [Option('o', "output", Required = false, HelpText = "ResourceKey:OutputHelp")]
     public string? Output { get; set; }
 
-    [Option('t', "target", Required = true, HelpText = "Target container name or ID")]
+    [Option('t', "target", Required = false, HelpText = "ResourceKey:TargetHelp")]
     public string? Target { get; set; }
 
-    [Option('h', "host", Required = true, HelpText = "Target host address")]
+    [Option('h', "host", Required = false, HelpText = "ResourceKey:HostHelp")]
     public string? Host { get; set; }
 
-    [Option("replace-tag", Required = false, HelpText = "Backup tag to save the original container state")]
+    [Option("replace-tag", Required = false, HelpText = "ResourceKey:ReplaceTagHelp")]
     public string? ReplaceTag { get; set; }
 
-    [Option("restore-tag", Required = false, HelpText = "Tag to restore (reverting to the backup version)")]
+    [Option("restore-tag", Required = false, HelpText = "ResourceKey:RestoreTagHelp")]
     public string? RestoreTag { get; set; }
+
+    public string? Name { get; set; }
+
 
     [Usage(ApplicationAlias = "WispStudios.Docker.ContainerPatcher")]
     public static IEnumerable<Example> Examples =>
         new List<Example>()
         {
-            new("Backup and modify a container",
+            new("ResourceKey:Example1Help",
                 new ExecutionProfile
                 {
                     Input = "C:\\path\\to\\file.txt,C:\\another\\directory",
@@ -36,7 +44,7 @@ public class ExecutionProfile
                     Host = "tcp://my-host:port",
                     ReplaceTag = "backup-20250426"
                 }),
-            new("Restore a container from backup",
+            new("ResourceKey:Example2Help",
                 new ExecutionProfile
                 {
                     Target = "my-container",

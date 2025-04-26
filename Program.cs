@@ -1,7 +1,9 @@
 ﻿using CommandLine;
 using Unity;
+using WispStudios.Docker.ContainerPatcher.Core.CommandLine;
 using WispStudios.Docker.ContainerPatcher.Core.Extensions;
 using WispStudios.Docker.ContainerPatcher.Core.Interfaces;
+using WispStudios.Docker.ContainerPatcher.Core.Localization;
 using WispStudios.Docker.ContainerPatcher.Core.Options;
 
 namespace WispStudios.Docker.ContainerPatcher
@@ -10,13 +12,23 @@ namespace WispStudios.Docker.ContainerPatcher
     { 
         private static async Task Main(string[] args)
         {
-            await Parser.Default.ParseArguments<StartupOptions>(args)
+            var initialResult = Parser.Default.ParseArguments<StartupOptions>(args);
+            initialResult.WithParsed(options =>
+            {
+                if (!string.IsNullOrEmpty(options.Language))
+                {
+                    ResourceProvider.SetCulture(options.Language);
+                }
+            });
+
+            await LocalizedParser.ParseArguments<StartupOptions>(args)
                 .WithParsedAsync(async opts => await RunWithOptionsAsync(opts));
         }
          
         private static async Task RunWithOptionsAsync(StartupOptions opts)
         {
             var container = new UnityContainer()
+                .RegisterLoggers()
                 .RegisterContainerPatcher()
                 .RegisterProfileManagement();
            
@@ -27,7 +39,7 @@ namespace WispStudios.Docker.ContainerPatcher
             {
                 case EStartupCommands.None:
                     await containerPatchManager.Run(opts);
-                    break;
+                    break; 
                 case EStartupCommands.ListProfile:
                     profileManager.PrintProfilesList();
                     break;

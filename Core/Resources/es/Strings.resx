@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LanguageHelp" xml:space="preserve">
+    <value>Establecer el idioma de la aplicación.</value>
+  </data>
+  <data name="ListProfilesHelp" xml:space="preserve">
+    <value>Listar perfiles que existen actualmente.</value>
+  </data>
+  <data name="LoadProfilesHelp" xml:space="preserve">
+    <value>Cargar una lista de perfiles existentes separados por comas y ejecutarlos en orden.</value>
+  </data>
+  <data name="SaveProfileHelp" xml:space="preserve">
+    <value>Guardar los parámetros pasados como un perfil para ejecución futura.</value>
+  </data>
+  <data name="InputHelp" xml:space="preserve">
+    <value>Lista CSV de archivos o directorios para transferir.</value>
+  </data>
+  <data name="OutputHelp" xml:space="preserve">
+    <value>Ruta de salida dentro del contenedor destino.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TargetHelp" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="HostHelp" xml:space="preserve">
+    <value>Dirección del servidor destino.</value>
+  </data>
+  <data name="ReplaceTagHelp" xml:space="preserve">
+    <value>Etiqueta de respaldo para guardar el estado original del contenedor.</value>
+  </data>
+  <data name="RestoreTagHelp" xml:space="preserve">
+    <value>Etiqueta para restaurar (volviendo a la versión de respaldo).</value>
+  </data>
+  <data name="Example1Help" xml:space="preserve">
+    <value>Respaldar y modificar un contenedor.</value>
+  </data>
+  <data name="Example2Help" xml:space="preserve">
+    <value>Restaurar un contenedor desde respaldo.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_CurrentProfilesMessage" xml:space="preserve">
+    <value>Perfiles Actuales:</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_SavedProfileMessage" xml:space="preserve">
+    <value>Perfil '{0}' guardado exitosamente.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_ExecutingProfileMessage" xml:space="preserve">
+    <value>Ejecutando perfil '{0}'.</value>
+  </data>
+  <data name="LogType_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LogType_Warn" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="LogType_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LogType_Fatal" xml:space="preserve">
+    <value>Fatal</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ConnectedMessage" xml:space="preserve">
+    <value>Conectado a Docker. Contenedor destino: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_FoundContainerMessage" xml:space="preserve">
+    <value>Contenedor encontrado: {0} ({1})</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_CurrentImageMessage" xml:space="preserve">
+    <value>Imagen actual: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully" xml:space="preserve">
+    <value>Operación completada exitosamente</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage" xml:space="preserve">
+    <value>Ejecutando en modo REEMPLAZO con etiqueta de respaldo: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_StoppingContainerMessage" xml:space="preserve">
+    <value>Deteniendo contenedor...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage" xml:space="preserve">
+    <value>Contenedor detenido</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CreatingBackupMessage" xml:space="preserve">
+    <value>Creando imagen de respaldo {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_BackupCreatedMessage" xml:space="preserve">
+    <value>Imagen de respaldo creada</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage" xml:space="preserve">
+    <value>Analizadas {0} rutas de entrada</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CommittingChangesMessage" xml:space="preserve">
+    <value>Confirmando cambios a {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage" xml:space="preserve">
+    <value>Cambios del contenedor confirmados a {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RestartingContainerMessage" xml:space="preserve">
+    <value>Reiniciando contenedor...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage" xml:space="preserve">
+    <value>Contenedor reiniciado</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage" xml:space="preserve">
+    <value>Ejecutando en modo RESTAURACIÓN con etiqueta: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage" xml:space="preserve">
+    <value>Creando nuevo contenedor desde imagen de respaldo {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage" xml:space="preserve">
+    <value>Eliminando contenedor actual...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage" xml:space="preserve">
+    <value>Nuevo contenedor creado: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage" xml:space="preserve">
+    <value>Iniciando contenedor restaurado...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerStartedMessage" xml:space="preserve">
+    <value>Contenedor iniciado</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage" xml:space="preserve">
+    <value>Contenedor restaurado exitosamente desde respaldo</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage" xml:space="preserve">
+    <value>Copiando {0} archivos al contenedor en la ruta: {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage" xml:space="preserve">
+    <value>Añadido al tar: {0} -&gt; {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage" xml:space="preserve">
+    <value>Archivos copiados exitosamente</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage" xml:space="preserve">
+    <value>Archivo tar temporal eliminado</value>
+  </data>
+</root>

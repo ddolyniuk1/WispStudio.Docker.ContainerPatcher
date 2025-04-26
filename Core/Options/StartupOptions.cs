@@ -26,20 +26,24 @@ public class StartupOptions : ExecutionProfile
             {
                 return EStartupCommands.LoadProfiles;
             }
-
+             
             return EStartupCommands.None;
         }
     }
 
-    [Option("save-profile", Required = false, HelpText = "Save the parameters passed as a profile for future execution.")]
+    [Option("save-profile", Required = false, HelpText = "ResourceKey:SaveProfileHelp")]
     [JsonIgnore]
     public string? SaveProfile { get; set; }
 
-    [Option("load-profiles", Required = false, HelpText = "Load a comma separated list of existing profiles and executes them in order.")]
+    [Option("load-profiles", Required = false, HelpText = "ResourceKey:LoadProfilesHelp")]
     [JsonIgnore]
     public string? LoadProfiles { get; set; }
 
-    [Option("list-profiles", Required = false, HelpText = "List profiles that currently exist.")]
+    [Option("list-profiles", Required = false, HelpText = "ResourceKey:ListProfilesHelp")]
     [JsonIgnore]
     public bool? ListProfiles { get; set; }
+
+    [Option("language", Required = false, HelpText = "ResourceKey:LanguageHelp")]
+    [JsonIgnore]
+    public string Language { get; set; }
 }

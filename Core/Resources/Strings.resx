@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LanguageHelp" xml:space="preserve">
+    <value>Set the language of the application.</value>
+  </data>
+  <data name="ListProfilesHelp" xml:space="preserve">
+    <value>List profiles that currently exist.</value>
+  </data>
+  <data name="LoadProfilesHelp" xml:space="preserve">
+    <value>Load a comma separated list of existing profiles and executes them in order.</value>
+  </data>
+  <data name="SaveProfileHelp" xml:space="preserve">
+    <value>Save the parameters passed as a profile for future execution.</value>
+  </data>
+  <data name="InputHelp" xml:space="preserve">
+    <value>CSV list of files or directories to transfer.</value>
+  </data>
+  <data name="OutputHelp" xml:space="preserve">
+    <value>Output path inside the target container.</value>
+  </data>
+  <data name="TargetHelp" xml:space="preserve">
+    <value>Target container name or identifier.</value>
+  </data>
+  <data name="HostHelp" xml:space="preserve">
+    <value>Target host address.</value>
+  </data>
+  <data name="ReplaceTagHelp" xml:space="preserve">
+    <value>Backup tag to save the original container state.</value>
+  </data>
+  <data name="RestoreTagHelp" xml:space="preserve">
+    <value>Tag to restore (reverting to the backup version).</value>
+  </data>
+  <data name="Example1Help" xml:space="preserve">
+    <value>Backup and modify a container.</value>
+  </data>
+  <data name="Example2Help" xml:space="preserve">
+    <value>Restore a container from backup.</value>
+  </data>
+  <data name="ProfileManager_PrintProfilesList_CurrentProfilesMessage" xml:space="preserve">
+    <value>Current Profiles:</value>
+  </data>
+  <data name="ProfileManager_SaveProfileAsync_SavedProfileMessage" xml:space="preserve">
+    <value>Saved profile '{0}' successfully.</value>
+  </data>
+  <data name="ProfileManager_ResolveProfileAsync_ExecutingProfileMessage" xml:space="preserve">
+    <value>Executing profile '{0}'.</value>
+  </data>
+  <data name="LogType_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LogType_Warn" xml:space="preserve">
+    <value>Warn</value>
+  </data>
+  <data name="LogType_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="LogType_Fatal" xml:space="preserve">
+    <value>Fatal</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_ConnectedMessage" xml:space="preserve">
+	  <value>Connected to Docker. Target container: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_FoundContainerMessage" xml:space="preserve">
+	  <value>Found container: {0} ({1})</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_CurrentImageMessage" xml:space="preserve">
+	  <value>Current image: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully" xml:space="preserve">
+	  <value>Operation completed successfully</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage" xml:space="preserve">
+	  <value>Running in REPLACE mode with backup tag: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_StoppingContainerMessage" xml:space="preserve">
+	  <value>Stopping container...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage" xml:space="preserve">
+	  <value>Container stopped</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CreatingBackupMessage" xml:space="preserve">
+	  <value>Creating backup image {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_BackupCreatedMessage" xml:space="preserve">
+	  <value>Backup image created</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage" xml:space="preserve">
+	  <value>Parsed {0} input paths</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_CommittingChangesMessage" xml:space="preserve">
+	  <value>Committing changes to {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage" xml:space="preserve">
+	  <value>Container changes committed to {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_RestartingContainerMessage" xml:space="preserve">
+	  <value>Restarting container...</value>
+  </data>
+  <data name="ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage" xml:space="preserve">
+	  <value>Container restarted</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage" xml:space="preserve">
+	  <value>Running in RESTORE mode with tag: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage" xml:space="preserve">
+	  <value>Creating new container from backup image {0}:{1}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage" xml:space="preserve">
+	  <value>Removing current container...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage" xml:space="preserve">
+	  <value>New container created: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage" xml:space="preserve">
+	  <value>Starting restored container...</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerStartedMessage" xml:space="preserve">
+	  <value>Container started</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage" xml:space="preserve">
+	  <value>Container successfully restored from backup</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage" xml:space="preserve">
+	  <value>Copying {0} files to container at path: {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage" xml:space="preserve">
+	  <value>Added to tar: {0} -&gt; {1}</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage" xml:space="preserve">
+	  <value>Files copied successfully</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage" xml:space="preserve">
+	  <value>Temporary tar file deleted</value>
+  </data>
+</root>
