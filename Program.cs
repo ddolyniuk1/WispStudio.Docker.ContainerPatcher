@@ -33,12 +33,15 @@ namespace WispStudios.Docker.ContainerPatcher
             public string RestoreTag { get; set; }
 
             [Option("save-profile", Required = false, HelpText = "Save the parameters passed as a profile for future execution.")]
+            [JsonIgnore]
             public string SaveProfile { get; set; }
 
             [Option("load-profiles", Required = false, HelpText = "Load a comma separated list of existing profiles and executes them in order.")]
+            [JsonIgnore]
             public string LoadProfiles { get; set; }
 
             [Option("list-profiles", Required = false, HelpText = "List profiles that currently exist.")]
+            [JsonIgnore]
             public bool? ListProfiles { get; set; }
 
             [Usage(ApplicationAlias = "WispStudios.Docker.ContainerPatcher")]
@@ -108,7 +111,7 @@ namespace WispStudios.Docker.ContainerPatcher
                         JsonConvert.SerializeObject(opts, Formatting.Indented,
                             new JsonSerializerSettings()
                             {
-                                NullValueHandling = NullValueHandling.Ignore, TypeNameHandling = TypeNameHandling.All
+                                NullValueHandling = NullValueHandling.Ignore, TypeNameHandling = TypeNameHandling.None
                             }));
                 }
 
