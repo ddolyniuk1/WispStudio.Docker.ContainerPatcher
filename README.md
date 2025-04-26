@@ -1,0 +1,1 @@
+# WispStudio.Docker.ContainerPatcher
