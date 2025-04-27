@@ -22,7 +22,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Errors {
+    public class Errors {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WispStudios.Docker.ContainerPatcher.Core.Resources.Errors", typeof(Errors).Assembly);
@@ -51,7 +51,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Container &apos;{0}&apos; not found..
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError {
+        public static string ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Docker API error: {0} (Status code: {1}).
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_DockerApiException {
+        public static string ContainerPatchAgent_ExecuteAsync_DockerApiException {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_DockerApiException", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Unexpected error connecting to Docker: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_GeneralException {
+        public static string ContainerPatchAgent_ExecuteAsync_GeneralException {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_GeneralException", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The host &apos;{0}&apos; is not a valid URI.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError {
+        public static string ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_HostIsNotValidURIError", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Failed to connect to Docker at {0}: {1}.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_HttpRequestException {
+        public static string ContainerPatchAgent_ExecuteAsync_HttpRequestException {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_HttpRequestException", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Either --replace-tag or --restore-tag must be specified..
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError {
+        public static string ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Warning: Path not found: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_ParseInputPaths_WarningPathNotFound {
+        public static string ContainerPatchAgent_ParseInputPaths_WarningPathNotFound {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ParseInputPaths_WarningPathNotFound", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: --input and --output are required in replace mode.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_InputOutputRequiredError {
+        public static string ContainerPatchAgent_ReplaceMode_InputOutputRequiredError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_InputOutputRequiredError", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: No valid input paths found..
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError {
+        public static string ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Backup image {0}:{1} not found..
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_BackupImageNotFoundError {
+        public static string ContainerPatchAgent_RestoreMode_BackupImageNotFoundError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_BackupImageNotFoundError", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to At least one input path must be provided for profile &apos;{0}&apos;..
         /// </summary>
-        internal static string InputNullOrEmpty {
+        public static string InputNullOrEmpty {
             get {
                 return ResourceManager.GetString("InputNullOrEmpty", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The output path must be provided for profile &apos;{0}&apos;..
         /// </summary>
-        internal static string OutputNullOrEmpty {
+        public static string OutputNullOrEmpty {
             get {
                 return ResourceManager.GetString("OutputNullOrEmpty", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The load profiles are null, something went wrong..
         /// </summary>
-        internal static string ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError {
+        public static string ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError {
             get {
                 return ResourceManager.GetString("ProfileManager_ParseLoadProfilesAsync_LoadProfilesWasNullError", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: The profiles directory &apos;{0}&apos; was not found or was removed during operation..
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_DirectoryNotFoundError {
+        public static string ProfileManager_PrintProfilesList_DirectoryNotFoundError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_DirectoryNotFoundError", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Failed to list profiles. {0}.
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_GeneralError {
+        public static string ProfileManager_PrintProfilesList_GeneralError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_GeneralError", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Problem accessing profiles directory. {0}.
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_IOException {
+        public static string ProfileManager_PrintProfilesList_IOException {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_IOException", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to No profiles found..
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_NoProfilesFoundError {
+        public static string ProfileManager_PrintProfilesList_NoProfilesFoundError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_NoProfilesFoundError", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: The profiles directory path is too long for your operating system..
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_PathTooLongError {
+        public static string ProfileManager_PrintProfilesList_PathTooLongError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_PathTooLongError", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The profiles directory failed to initialize and execution cannot continue..
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError {
+        public static string ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_ProfileDirectoryIsNullError", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: You don&apos;t have permission to access the profiles directory. Try running as administrator..
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError {
+        public static string ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_UnauthorizedAccessExceptionError", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: You don&apos;t have permission to read the profile file. Try running as administrator..
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException {
+        public static string ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_Error_UnauthorizedAccessException", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Profile file &apos;{0}.json&apos; was deleted between check and load..
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_FileNotFoundException {
+        public static string ProfileManager_ResolveProfileAsync_FileNotFoundException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_FileNotFoundException", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Failed to load profile &apos;{0}&apos;. {1}.
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_GeneralException {
+        public static string ProfileManager_ResolveProfileAsync_GeneralException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_GeneralException", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Unable to read profile file. The file may be in use by another process. {0}.
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_IOException {
+        public static string ProfileManager_ResolveProfileAsync_IOException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_IOException", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Profile file contains invalid JSON. {0}.
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_JsonException {
+        public static string ProfileManager_ResolveProfileAsync_JsonException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_JsonException", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Failed to deserialize profile data. The profile format may be incompatible. {0}.
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_JsonSerializationException {
+        public static string ProfileManager_ResolveProfileAsync_JsonSerializationException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_JsonSerializationException", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The profile &apos;{0}&apos; is null, execution will not continue on this profile..
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_NullReferenceException {
+        public static string ProfileManager_ResolveProfileAsync_NullReferenceException {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_NullReferenceException", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The profile &apos;{0}&apos; does not exist..
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError {
+        public static string ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_ProfileDoesNotExistError", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Failed to serialize profile data. {0}.
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_FailedToSerializeProfileError {
+        public static string ProfileManager_SaveProfileAsync_FailedToSerializeProfileError {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_FailedToSerializeProfileError", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Failed to save profile &apos;{0}&apos;. {1}.
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_GeneralException {
+        public static string ProfileManager_SaveProfileAsync_GeneralException {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_GeneralException", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Invalid profile name. Profile names can&apos;t contain invalid characters. {0}.
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_InvalidProfileNameError {
+        public static string ProfileManager_SaveProfileAsync_InvalidProfileNameError {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_InvalidProfileNameError", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Unable to write profile file. The file may be in use by another process. {0}.
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_IOException {
+        public static string ProfileManager_SaveProfileAsync_IOException {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_IOException", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: The profile name or path is too long for your operating system..
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_PathTooLongError {
+        public static string ProfileManager_SaveProfileAsync_PathTooLongError {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_PathTooLongError", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The profile name cannot be parsed correctly..
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1 {
+        public static string ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1 {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed1", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The profile name must be a valid file name, it cannot include spaces or periods, and must contain at least one character of alphanumeric, underscores, or hyphens.
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2 {
+        public static string ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2 {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_ProfileNameCannotBeParsed2", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The save profile is null, something went wrong..
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_ProfileWasNullError {
+        public static string ProfileManager_SaveProfileAsync_ProfileWasNullError {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_ProfileWasNullError", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: You don&apos;t have permission to save the profile. Try running as administrator..
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_UnauthorizedAccessError {
+        public static string ProfileManager_SaveProfileAsync_UnauthorizedAccessError {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_UnauthorizedAccessError", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Directory &apos;{0}&apos; does not exist. Please create it first..
         /// </summary>
-        internal static string ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError {
+        public static string ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError {
             get {
                 return ResourceManager.GetString("ProfileManager_TryInitializeProfileDirectoryPath_DirectoryNotFoundError", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: A problem occurred attempting to resolve the profile directory &apos;{0}&apos;.
         /// </summary>
-        internal static string ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred {
+        public static string ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred {
             get {
                 return ResourceManager.GetString("ProfileManager_TryInitializeProfileDirectoryPath_IOExceptionOccurred", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: Creating the directory &apos;{0}&apos; is not supported..
         /// </summary>
-        internal static string ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError {
+        public static string ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError {
             get {
                 return ResourceManager.GetString("ProfileManager_TryInitializeProfileDirectoryPath_NotSupportedError", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: The profiles directory &apos;{0}&apos; name or path is too long for your operating system..
         /// </summary>
-        internal static string ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError {
+        public static string ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError {
             get {
                 return ResourceManager.GetString("ProfileManager_TryInitializeProfileDirectoryPath_PathTooLongError", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error: You don&apos;t have permission to create the profiles directory &apos;{0}&apos;. Try running as administrator..
         /// </summary>
-        internal static string ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError {
+        public static string ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError {
             get {
                 return ResourceManager.GetString("ProfileManager_TryInitializeProfileDirectoryPath_UnauthorizedAccessError", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Invalid input, please use --help for more details..
         /// </summary>
-        internal static string Program_RunWithOptionsAsync_InvalidInput {
+        public static string Program_RunWithOptionsAsync_InvalidInput {
             get {
                 return ResourceManager.GetString("Program_RunWithOptionsAsync_InvalidInput", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to The target container must be provided for profile &apos;{0}&apos;..
         /// </summary>
-        internal static string TargetNullOrEmpty {
+        public static string TargetNullOrEmpty {
             get {
                 return ResourceManager.GetString("TargetNullOrEmpty", resourceCulture);
             }

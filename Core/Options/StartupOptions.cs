@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using Newtonsoft.Json;
+using WispStudios.Docker.ContainerPatcher.Core.Resources;
 
 namespace WispStudios.Docker.ContainerPatcher.Core.Options;
 
@@ -37,19 +38,19 @@ public class StartupOptions : ExecutionProfile
         }
     }
 
-    [Option("save-profile", Required = false, HelpText = "ResourceKey:SaveProfileHelp")]
+    [Option("save-profile", Required = false, HelpText = "SaveProfileHelp", ResourceType = typeof(Strings))]
     [JsonIgnore]
     public string? SaveProfile { get; set; }
 
-    [Option("load-profiles", Required = false, HelpText = "ResourceKey:LoadProfilesHelp")]
+    [Option("load-profiles", Required = false, HelpText = "LoadProfilesHelp", ResourceType = typeof(Strings))]
     [JsonIgnore]
     public string? LoadProfiles { get; set; }
 
-    [Option("list-profiles", Required = false, HelpText = "ResourceKey:ListProfilesHelp")]
+    [Option("list-profiles", Required = false, HelpText = "ListProfilesHelp", ResourceType = typeof(Strings))]
     [JsonIgnore]
     public bool? ListProfiles { get; set; }
 
-    [Option("language", Required = false, HelpText = "ResourceKey:LanguageHelp")]
+    [Option("language", Required = false, HelpText = "LanguageHelp", ResourceType = typeof(Strings))]
     [JsonIgnore]
     public string Language { get; set; }
 }

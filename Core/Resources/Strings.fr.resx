@@ -249,4 +249,112 @@
   <data name="ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage" xml:space="preserve">
     <value>Fichier tar temporaire supprimé</value>
   </data>
+  <data name="Reading" xml:space="preserve">
+    <value>Lecture </value>
+  </data>
+  <data name="Lines" xml:space="preserve">
+    <value> lignes</value>
+  </data>
+  <data name="Bytes" xml:space="preserve">
+    <value> octets</value>
+  </data>
+  <data name="FromTop" xml:space="preserve">
+    <value> depuis le début :</value>
+  </data>
+  <data name="FromBottom" xml:space="preserve">
+    <value> depuis la fin :</value>
+  </data>
+  <data name="HelpTextLines" xml:space="preserve">
+    <value>Lignes à afficher depuis le début ou la fin du fichier.</value>
+  </data>
+  <data name="HelpTextBytes" xml:space="preserve">
+    <value>Octets à afficher depuis le début ou la fin du fichier.</value>
+  </data>
+  <data name="HelpTextQuiet" xml:space="preserve">
+    <value>Supprime les messages récapitulatifs.</value>
+  </data>
+  <data name="HelpTextFileName" xml:space="preserve">
+    <value>Fichier d'entrée à traiter.</value>
+  </data>
+  <data name="HelpTextVerbHead" xml:space="preserve">
+    <value>Affiche les premières lignes d'un fichier.</value>
+  </data>
+  <data name="ExamplesNormalScenario" xml:space="preserve">
+    <value>scénario normal</value>
+  </data>
+  <data name="ExamplesSpecifyBytes" xml:space="preserve">
+    <value>spécifier les octets</value>
+  </data>
+  <data name="ExamplesSuppressSummary" xml:space="preserve">
+    <value>supprimer le récapitulatif</value>
+  </data>
+  <data name="ExamplesReadMoreLines" xml:space="preserve">
+    <value>lire plus de lignes</value>
+  </data>
+  <data name="HelpTextVerbTail" xml:space="preserve">
+    <value>Affiche les dernières lignes d'un fichier.</value>
+  </data>
+  <data name="SentenceBadFormatConversionErrorOption" xml:space="preserve">
+    <value>L'option '{0}' est définie dans un mauvais format.</value>
+  </data>
+  <data name="SentenceBadFormatConversionErrorValue" xml:space="preserve">
+    <value>Une valeur non liée à un nom d'option est définie dans un mauvais format.</value>
+  </data>
+  <data name="SentenceBadFormatTokenError" xml:space="preserve">
+    <value>Le token '{0}' n'est pas reconnu.</value>
+  </data>
+  <data name="SentenceBadVerbSelectedError" xml:space="preserve">
+    <value>Le verbe '{0}' n'est pas reconnu.</value>
+  </data>
+  <data name="SentenceErrorsHeadingText" xml:space="preserve">
+    <value>ERREUR(S) :</value>
+  </data>
+  <data name="SentenceHelpCommandTextOption" xml:space="preserve">
+    <value>Afficher cet écran d'aide.</value>
+  </data>
+  <data name="SentenceHelpCommandTextVerb" xml:space="preserve">
+    <value>Afficher plus d'informations sur une commande spécifique.</value>
+  </data>
+  <data name="SentenceMissingRequiredOptionError" xml:space="preserve">
+    <value>L'option requise '{0}' est manquante.</value>
+  </data>
+  <data name="SentenceMissingRequiredValueError" xml:space="preserve">
+    <value>Une valeur requise non liée à un nom d'option est manquante.</value>
+  </data>
+  <data name="SentenceMissingValueOptionError" xml:space="preserve">
+    <value>L'option '{0}' n'a pas de valeur.</value>
+  </data>
+  <data name="SentenceMutuallyExclusiveSetErrors" xml:space="preserve">
+    <value>Options : {0} ne sont pas compatibles avec {1}.</value>
+  </data>
+  <data name="SentenceNoVerbSelectedError" xml:space="preserve">
+    <value>Aucun verbe sélectionné.</value>
+  </data>
+  <data name="SentenceRepeatedOptionError" xml:space="preserve">
+    <value>L'option '{0}' est définie plusieurs fois.</value>
+  </data>
+  <data name="SentenceRequiredWord" xml:space="preserve">
+    <value>Requis.</value>
+  </data>
+  <data name="SentenceSequenceOutOfRangeErrorOption" xml:space="preserve">
+    <value>Une option de séquence '{0}' est définie avec moins ou plus d'éléments que nécessaire.</value>
+  </data>
+  <data name="SentenceSequenceOutOfRangeErrorValue" xml:space="preserve">
+    <value>Une valeur de séquence non liée à un nom d'option est définie avec moins d'éléments que nécessaire.</value>
+  </data>
+  <data name="SentenceSetValueExceptionError" xml:space="preserve">
+    <value>Erreur lors de la définition de la valeur pour l'option '{0}' : {1}</value>
+  </data>
+  <data name="SentenceUnknownOptionError" xml:space="preserve">
+    <value>L'option '{0}' est inconnue.</value>
+  </data>
+  <data name="SentenceUsageHeadingText" xml:space="preserve">
+    <value>UTILISATION :</value>
+  </data>
+  <data name="SentenceVersionCommandText" xml:space="preserve">
+    <value>Afficher les informations de version.</value>
+  </data>
+  <data name="OptionsGroupWord" xml:space="preserve">
+    <value>groupe</value>
+  </data>
 </root>

@@ -22,7 +22,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WispStudios.Docker.ContainerPatcher.Core.Resources.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  bytes.
+        /// </summary>
+        public static string Bytes {
+            get {
+                return ResourceManager.GetString("Bytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Added to tar: {0} -&gt; {1}.
         /// </summary>
-        internal static string ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage {
+        public static string ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Copying {0} files to container at path: {1}.
         /// </summary>
-        internal static string ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage {
+        public static string ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Files copied successfully.
         /// </summary>
-        internal static string ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage {
+        public static string ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_CopyFilesToContainer_FilesCopiedSuccessfullyMessage", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Temporary tar file deleted.
         /// </summary>
-        internal static string ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage {
+        public static string ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_CopyFilesToContainer_TemporaryTarFileDeletedMessage", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Connected to Docker. Target container: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_ConnectedMessage {
+        public static string ContainerPatchAgent_ExecuteAsync_ConnectedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_ConnectedMessage", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Current image: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_CurrentImageMessage {
+        public static string ContainerPatchAgent_ExecuteAsync_CurrentImageMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_CurrentImageMessage", resourceCulture);
             }
@@ -117,7 +126,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Found container: {0} ({1}).
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_FoundContainerMessage {
+        public static string ContainerPatchAgent_ExecuteAsync_FoundContainerMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_FoundContainerMessage", resourceCulture);
             }
@@ -126,7 +135,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Operation completed successfully.
         /// </summary>
-        internal static string ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully {
+        public static string ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully", resourceCulture);
             }
@@ -135,7 +144,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Backup image created.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_BackupCreatedMessage {
+        public static string ContainerPatchAgent_ReplaceMode_BackupCreatedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_BackupCreatedMessage", resourceCulture);
             }
@@ -144,7 +153,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Committing changes to {0}:{1}.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_CommittingChangesMessage {
+        public static string ContainerPatchAgent_ReplaceMode_CommittingChangesMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_CommittingChangesMessage", resourceCulture);
             }
@@ -153,7 +162,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Container changes committed to {0}:{1}.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage {
+        public static string ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage", resourceCulture);
             }
@@ -162,7 +171,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Container restarted.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage {
+        public static string ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage", resourceCulture);
             }
@@ -171,7 +180,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Container stopped.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage {
+        public static string ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage", resourceCulture);
             }
@@ -180,7 +189,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Creating backup image {0}:{1}.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_CreatingBackupMessage {
+        public static string ContainerPatchAgent_ReplaceMode_CreatingBackupMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_CreatingBackupMessage", resourceCulture);
             }
@@ -189,7 +198,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Parsed {0} input paths.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage {
+        public static string ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_ParsedInputPathsMessage", resourceCulture);
             }
@@ -198,7 +207,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Restarting container....
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_RestartingContainerMessage {
+        public static string ContainerPatchAgent_ReplaceMode_RestartingContainerMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_RestartingContainerMessage", resourceCulture);
             }
@@ -207,7 +216,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Running in REPLACE mode with backup tag: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage {
+        public static string ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage", resourceCulture);
             }
@@ -216,7 +225,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Stopping container....
         /// </summary>
-        internal static string ContainerPatchAgent_ReplaceMode_StoppingContainerMessage {
+        public static string ContainerPatchAgent_ReplaceMode_StoppingContainerMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_StoppingContainerMessage", resourceCulture);
             }
@@ -225,7 +234,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Container started.
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_ContainerStartedMessage {
+        public static string ContainerPatchAgent_RestoreMode_ContainerStartedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_ContainerStartedMessage", resourceCulture);
             }
@@ -234,7 +243,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Container successfully restored from backup.
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage {
+        public static string ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage", resourceCulture);
             }
@@ -243,7 +252,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Creating new container from backup image {0}:{1}.
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage {
+        public static string ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage", resourceCulture);
             }
@@ -252,7 +261,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to New container created: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage {
+        public static string ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage", resourceCulture);
             }
@@ -261,7 +270,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Removing current container....
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage {
+        public static string ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage", resourceCulture);
             }
@@ -270,7 +279,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Running in RESTORE mode with tag: {0}.
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage {
+        public static string ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage", resourceCulture);
             }
@@ -279,7 +288,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Starting restored container....
         /// </summary>
-        internal static string ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage {
+        public static string ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage", resourceCulture);
             }
@@ -288,7 +297,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Backup and modify a container..
         /// </summary>
-        internal static string Example1Help {
+        public static string Example1Help {
             get {
                 return ResourceManager.GetString("Example1Help", resourceCulture);
             }
@@ -297,16 +306,124 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Restore a container from backup..
         /// </summary>
-        internal static string Example2Help {
+        public static string Example2Help {
             get {
                 return ResourceManager.GetString("Example2Help", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to normal scenario.
+        /// </summary>
+        public static string ExamplesNormalScenario {
+            get {
+                return ResourceManager.GetString("ExamplesNormalScenario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to read more lines.
+        /// </summary>
+        public static string ExamplesReadMoreLines {
+            get {
+                return ResourceManager.GetString("ExamplesReadMoreLines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to specify bytes.
+        /// </summary>
+        public static string ExamplesSpecifyBytes {
+            get {
+                return ResourceManager.GetString("ExamplesSpecifyBytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to suppress summary.
+        /// </summary>
+        public static string ExamplesSuppressSummary {
+            get {
+                return ResourceManager.GetString("ExamplesSuppressSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  from bottom:.
+        /// </summary>
+        public static string FromBottom {
+            get {
+                return ResourceManager.GetString("FromBottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  from top:.
+        /// </summary>
+        public static string FromTop {
+            get {
+                return ResourceManager.GetString("FromTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bytes to be printed from the beginning or end of the file..
+        /// </summary>
+        public static string HelpTextBytes {
+            get {
+                return ResourceManager.GetString("HelpTextBytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input file to be processed..
+        /// </summary>
+        public static string HelpTextFileName {
+            get {
+                return ResourceManager.GetString("HelpTextFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lines to be printed from the beginning or end of the file..
+        /// </summary>
+        public static string HelpTextLines {
+            get {
+                return ResourceManager.GetString("HelpTextLines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suppresses summary messages..
+        /// </summary>
+        public static string HelpTextQuiet {
+            get {
+                return ResourceManager.GetString("HelpTextQuiet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays first lines of a file..
+        /// </summary>
+        public static string HelpTextVerbHead {
+            get {
+                return ResourceManager.GetString("HelpTextVerbHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Displays last lines of a file..
+        /// </summary>
+        public static string HelpTextVerbTail {
+            get {
+                return ResourceManager.GetString("HelpTextVerbTail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Target host address..
         /// </summary>
-        internal static string HostHelp {
+        public static string HostHelp {
             get {
                 return ResourceManager.GetString("HostHelp", resourceCulture);
             }
@@ -315,7 +432,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to CSV list of files or directories to transfer..
         /// </summary>
-        internal static string InputHelp {
+        public static string InputHelp {
             get {
                 return ResourceManager.GetString("InputHelp", resourceCulture);
             }
@@ -324,16 +441,25 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Set the language of the application. (es, fr).
         /// </summary>
-        internal static string LanguageHelp {
+        public static string LanguageHelp {
             get {
                 return ResourceManager.GetString("LanguageHelp", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  lines.
+        /// </summary>
+        public static string Lines {
+            get {
+                return ResourceManager.GetString("Lines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to List profiles that currently exist..
         /// </summary>
-        internal static string ListProfilesHelp {
+        public static string ListProfilesHelp {
             get {
                 return ResourceManager.GetString("ListProfilesHelp", resourceCulture);
             }
@@ -342,7 +468,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Load a comma separated list of existing profiles and executes them in order..
         /// </summary>
-        internal static string LoadProfilesHelp {
+        public static string LoadProfilesHelp {
             get {
                 return ResourceManager.GetString("LoadProfilesHelp", resourceCulture);
             }
@@ -351,7 +477,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string LogType_Error {
+        public static string LogType_Error {
             get {
                 return ResourceManager.GetString("LogType_Error", resourceCulture);
             }
@@ -360,7 +486,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Fatal.
         /// </summary>
-        internal static string LogType_Fatal {
+        public static string LogType_Fatal {
             get {
                 return ResourceManager.GetString("LogType_Fatal", resourceCulture);
             }
@@ -369,7 +495,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
-        internal static string LogType_Info {
+        public static string LogType_Info {
             get {
                 return ResourceManager.GetString("LogType_Info", resourceCulture);
             }
@@ -378,16 +504,25 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Warn.
         /// </summary>
-        internal static string LogType_Warn {
+        public static string LogType_Warn {
             get {
                 return ResourceManager.GetString("LogType_Warn", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to group.
+        /// </summary>
+        public static string OptionsGroupWord {
+            get {
+                return ResourceManager.GetString("OptionsGroupWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output path inside the target container..
         /// </summary>
-        internal static string OutputHelp {
+        public static string OutputHelp {
             get {
                 return ResourceManager.GetString("OutputHelp", resourceCulture);
             }
@@ -396,7 +531,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Current Profiles:.
         /// </summary>
-        internal static string ProfileManager_PrintProfilesList_CurrentProfilesMessage {
+        public static string ProfileManager_PrintProfilesList_CurrentProfilesMessage {
             get {
                 return ResourceManager.GetString("ProfileManager_PrintProfilesList_CurrentProfilesMessage", resourceCulture);
             }
@@ -405,7 +540,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Executing profile &apos;{0}&apos;..
         /// </summary>
-        internal static string ProfileManager_ResolveProfileAsync_ExecutingProfileMessage {
+        public static string ProfileManager_ResolveProfileAsync_ExecutingProfileMessage {
             get {
                 return ResourceManager.GetString("ProfileManager_ResolveProfileAsync_ExecutingProfileMessage", resourceCulture);
             }
@@ -414,16 +549,25 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Saved profile &apos;{0}&apos; successfully..
         /// </summary>
-        internal static string ProfileManager_SaveProfileAsync_SavedProfileMessage {
+        public static string ProfileManager_SaveProfileAsync_SavedProfileMessage {
             get {
                 return ResourceManager.GetString("ProfileManager_SaveProfileAsync_SavedProfileMessage", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reading .
+        /// </summary>
+        public static string Reading {
+            get {
+                return ResourceManager.GetString("Reading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup tag to save the original container state..
         /// </summary>
-        internal static string ReplaceTagHelp {
+        public static string ReplaceTagHelp {
             get {
                 return ResourceManager.GetString("ReplaceTagHelp", resourceCulture);
             }
@@ -432,7 +576,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Tag to restore (reverting to the backup version)..
         /// </summary>
-        internal static string RestoreTagHelp {
+        public static string RestoreTagHelp {
             get {
                 return ResourceManager.GetString("RestoreTagHelp", resourceCulture);
             }
@@ -441,16 +585,196 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Save the parameters passed as a profile for future execution..
         /// </summary>
-        internal static string SaveProfileHelp {
+        public static string SaveProfileHelp {
             get {
                 return ResourceManager.GetString("SaveProfileHelp", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Možnost &apos;{0}&apos; je definována ve špatném formátu..
+        /// </summary>
+        public static string SentenceBadFormatConversionErrorOption {
+            get {
+                return ResourceManager.GetString("SentenceBadFormatConversionErrorOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value not bound to option name is defined with a bad format..
+        /// </summary>
+        public static string SentenceBadFormatConversionErrorValue {
+            get {
+                return ResourceManager.GetString("SentenceBadFormatConversionErrorValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Token &apos;{0}&apos; is not recognized..
+        /// </summary>
+        public static string SentenceBadFormatTokenError {
+            get {
+                return ResourceManager.GetString("SentenceBadFormatTokenError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verb &apos;{0}&apos; is not recognized..
+        /// </summary>
+        public static string SentenceBadVerbSelectedError {
+            get {
+                return ResourceManager.GetString("SentenceBadVerbSelectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR(S):.
+        /// </summary>
+        public static string SentenceErrorsHeadingText {
+            get {
+                return ResourceManager.GetString("SentenceErrorsHeadingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display this help screen..
+        /// </summary>
+        public static string SentenceHelpCommandTextOption {
+            get {
+                return ResourceManager.GetString("SentenceHelpCommandTextOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display more information on a specific command..
+        /// </summary>
+        public static string SentenceHelpCommandTextVerb {
+            get {
+                return ResourceManager.GetString("SentenceHelpCommandTextVerb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required option &apos;{0}&apos; is missing..
+        /// </summary>
+        public static string SentenceMissingRequiredOptionError {
+            get {
+                return ResourceManager.GetString("SentenceMissingRequiredOptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A required value not bound to option name is missing..
+        /// </summary>
+        public static string SentenceMissingRequiredValueError {
+            get {
+                return ResourceManager.GetString("SentenceMissingRequiredValueError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option &apos;{0}&apos; has no value..
+        /// </summary>
+        public static string SentenceMissingValueOptionError {
+            get {
+                return ResourceManager.GetString("SentenceMissingValueOptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options: {0} are not compatible with {1}..
+        /// </summary>
+        public static string SentenceMutuallyExclusiveSetErrors {
+            get {
+                return ResourceManager.GetString("SentenceMutuallyExclusiveSetErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No verb selected..
+        /// </summary>
+        public static string SentenceNoVerbSelectedError {
+            get {
+                return ResourceManager.GetString("SentenceNoVerbSelectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option &apos;{0}&apos; is defined multiple times..
+        /// </summary>
+        public static string SentenceRepeatedOptionError {
+            get {
+                return ResourceManager.GetString("SentenceRepeatedOptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required..
+        /// </summary>
+        public static string SentenceRequiredWord {
+            get {
+                return ResourceManager.GetString("SentenceRequiredWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A sequence option &apos;{0}&apos; is defined with fewer or more items than required..
+        /// </summary>
+        public static string SentenceSequenceOutOfRangeErrorOption {
+            get {
+                return ResourceManager.GetString("SentenceSequenceOutOfRangeErrorOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A sequence value not bound to option name is defined with fewer items than required..
+        /// </summary>
+        public static string SentenceSequenceOutOfRangeErrorValue {
+            get {
+                return ResourceManager.GetString("SentenceSequenceOutOfRangeErrorValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error setting value to option &apos;{0}&apos;: {1}.
+        /// </summary>
+        public static string SentenceSetValueExceptionError {
+            get {
+                return ResourceManager.GetString("SentenceSetValueExceptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option &apos;{0}&apos; is unknown..
+        /// </summary>
+        public static string SentenceUnknownOptionError {
+            get {
+                return ResourceManager.GetString("SentenceUnknownOptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to USAGE:.
+        /// </summary>
+        public static string SentenceUsageHeadingText {
+            get {
+                return ResourceManager.GetString("SentenceUsageHeadingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display version information..
+        /// </summary>
+        public static string SentenceVersionCommandText {
+            get {
+                return ResourceManager.GetString("SentenceVersionCommandText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Target container name or identifier..
         /// </summary>
-        internal static string TargetHelp {
+        public static string TargetHelp {
             get {
                 return ResourceManager.GetString("TargetHelp", resourceCulture);
             }

@@ -1,6 +1,6 @@
 ﻿using CommandLine;
-using Unity;
-using WispStudios.Docker.ContainerPatcher.Core.CommandLine;
+using CommandLine.Text;
+using Unity; 
 using WispStudios.Docker.ContainerPatcher.Core.Extensions;
 using WispStudios.Docker.ContainerPatcher.Core.Interfaces;
 using WispStudios.Docker.ContainerPatcher.Core.Localization;
@@ -13,16 +13,16 @@ namespace WispStudios.Docker.ContainerPatcher
     { 
         private static async Task Main(string[] args)
         {
-            var initialResult = Parser.Default.ParseArguments<StartupOptions>(args);
-            initialResult.WithParsed(options =>
+            for (var index = 0; index < args.Length; index++)
             {
-                if (!string.IsNullOrEmpty(options.Language))
-                {
-                    ResourceProvider.SetCulture(options.Language);
-                }
-            });
+                var arg = args[index];
+                if (!arg.Equals("--language", StringComparison.CurrentCultureIgnoreCase)) continue;
+                var language = args.ElementAtOrDefault(index + 1);
+                if (language != null) ResourceProvider.SetCulture(language);
+            }
+            SentenceBuilder.Factory = () => new LocalizableSentenceBuilder();
 
-            await LocalizedParser.ParseArguments<StartupOptions>(args)
+            await Parser.Default.ParseArguments<StartupOptions>(args)
                 .WithParsedAsync(async opts => await RunWithOptionsAsync(opts));
         }
          

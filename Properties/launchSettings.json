@@ -2,7 +2,7 @@
   "profiles": {
     "WispStudios.Docker.ContainerPatcher": {
       "commandName": "Project",
-      "commandLineArgs": "--language es"
+      "commandLineArgs": "--language es --help\r\n"
     }
   }
 }

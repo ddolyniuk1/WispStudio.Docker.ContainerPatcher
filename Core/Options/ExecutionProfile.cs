@@ -1,5 +1,6 @@
 ﻿using CommandLine;
 using CommandLine.Text;
+using WispStudios.Docker.ContainerPatcher.Core.Resources;
 
 namespace WispStudios.Docker.ContainerPatcher.Core.Options;
 
@@ -10,22 +11,22 @@ public class ExecutionProfile
         return Name ?? "<empty>";
     }
 
-    [Option('i', "input", Required = false, HelpText = "ResourceKey:InputHelp")]
+    [Option('i', "input", Required = false, HelpText = "InputHelp", ResourceType = typeof(Strings))]
     public string? Input { get; set; }
 
-    [Option('o', "output", Required = false, HelpText = "ResourceKey:OutputHelp")]
+    [Option('o', "output", Required = false, HelpText = "OutputHelp", ResourceType = typeof(Strings))]
     public string? Output { get; set; }
 
-    [Option('t', "target", Required = false, HelpText = "ResourceKey:TargetHelp")]
+    [Option('t', "target", Required = false, HelpText = "TargetHelp", ResourceType = typeof(Strings))]
     public string? Target { get; set; }
 
-    [Option('h', "host", Required = false, HelpText = "ResourceKey:HostHelp")]
+    [Option('h', "host", Required = false, HelpText = "HostHelp", ResourceType = typeof(Strings))]
     public string? Host { get; set; }
 
-    [Option("replace-tag", Required = false, HelpText = "ResourceKey:ReplaceTagHelp")]
+    [Option("replace-tag", Required = false, HelpText = "ReplaceTagHelp", ResourceType = typeof(Strings))]
     public string? ReplaceTag { get; set; }
 
-    [Option("restore-tag", Required = false, HelpText = "ResourceKey:RestoreTagHelp")]
+    [Option("restore-tag", Required = false, HelpText = "RestoreTagHelp", ResourceType = typeof(Strings))]
     public string? RestoreTag { get; set; }
 
     public string? Name { get; set; }
@@ -35,7 +36,7 @@ public class ExecutionProfile
     public static IEnumerable<Example> Examples =>
         new List<Example>()
         {
-            new("ResourceKey:Example1Help",
+            new("Example1Help",
                 new ExecutionProfile
                 {
                     Input = "C:\\path\\to\\file.txt,C:\\another\\directory",
@@ -44,7 +45,7 @@ public class ExecutionProfile
                     Host = "tcp://my-host:port",
                     ReplaceTag = "backup-20250426"
                 }),
-            new("ResourceKey:Example2Help",
+            new("Example2Help",
                 new ExecutionProfile
                 {
                     Target = "my-container",
