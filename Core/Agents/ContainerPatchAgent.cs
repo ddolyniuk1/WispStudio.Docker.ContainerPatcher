@@ -31,18 +31,6 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(profile.Input))
-            {  
-                _logger.LogWarn(Errors.InputNullOrEmpty, profile);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(profile.Output))
-            {
-                _logger.LogWarn(Errors.OutputNullOrEmpty, profile);
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(profile.Target))
             {
                 _logger.LogWarn(Errors.TargetNullOrEmpty, profile);
@@ -74,7 +62,8 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 var repository = imageName.Contains(":") ? imageName.Split(':')[0] : imageName;
                 var currentTag = imageName.Contains(":") ? imageName.Split(':')[1] : "latest";
 
-                _logger.LogInfo(Strings.ContainerPatchAgent_ExecuteAsync_FoundContainerMessage, container.ID, string.Join(", ", container.Names));
+                _logger.LogInfo(Strings.ContainerPatchAgent_ExecuteAsync_FoundContainerMessage, container.ID,
+                    string.Join(", ", container.Names));
                 _logger.LogInfo(Strings.ContainerPatchAgent_ExecuteAsync_CurrentImageMessage, imageName);
 
                 if (!string.IsNullOrEmpty(profile.ReplaceTag))
@@ -85,9 +74,13 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 {
                     await RestoreMode(client, profile, container, containerInfo, repository);
                 }
+                else if (!string.IsNullOrWhiteSpace(profile.Input) && !string.IsNullOrWhiteSpace(profile.Output))
+                {
+                    await CopyOnlyMode(client, profile, container);
+                }
                 else
                 {
-                    _logger.LogError(Errors.ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError);
+                    _logger.LogError(Errors.ContainerPatchAgent_ExecuteAsync_NoOperationSpecifiedError);
                 }
 
                 _logger.LogInfo(Strings.ContainerPatchAgent_ExecuteAsync_OperationCompletedSuccessfully);
@@ -105,11 +98,13 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 _logger.LogError(Errors.ContainerPatchAgent_ExecuteAsync_GeneralException, ex.Message);
             }
         }
-          
+
         private async Task ReplaceMode(IDockerClient client, ExecutionProfile opts, ContainerListResponse container,
             ContainerInspectResponse containerInfo, string repository, string currentTag)
         {
-            _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage, opts.ReplaceTag!);
+            _logger.LogInfo(string.Format(Strings.ContainerPatchAgent_ReplaceMode_RunningReplaceModeMessage,
+                opts.ReplaceTag!));
+
 
             if (string.IsNullOrEmpty(opts.Input) || string.IsNullOrEmpty(opts.Output))
             {
@@ -124,7 +119,8 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage);
             }
 
-            _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_CreatingBackupMessage, repository, opts.ReplaceTag!);
+            _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_CreatingBackupMessage, repository,
+                opts.ReplaceTag!);
             await client.Images.TagImageAsync(
                 containerInfo.Image,
                 new ImageTagParameters
@@ -155,7 +151,8 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 Comment = $"Modified by WispStudios.Docker.ContainerPatcher at {DateTime.Now}"
             });
 
-            _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage, repository, currentTag);
+            _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_ContainerChangesCommittedMessage, repository,
+                currentTag);
 
             if (container.State == "running")
             {
@@ -170,7 +167,9 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
         {
             _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_RunningInRestoreModeMessage, opts.RestoreTag!);
 
-            if (container.State == "running")
+            var originalContainerState = container.State;
+
+            if (originalContainerState == "running")
             {
                 _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_StoppingContainerMessage);
                 await client.Containers.StopContainerAsync(container.ID, new ContainerStopParameters());
@@ -193,13 +192,19 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
 
             if (!images.Any())
             {
-                _logger.LogError(Errors.ContainerPatchAgent_RestoreMode_BackupImageNotFoundError, repository, opts.RestoreTag!);
+                _logger.LogError(Errors.ContainerPatchAgent_RestoreMode_BackupImageNotFoundError, repository,
+                    opts.RestoreTag!);
+                if (originalContainerState != "running" || container.State == "running") return;
+                _logger.LogInfo(string.Format(Errors.ContainerPatchAgent_RestoreMode_AttemptingToRestartContainerAsRestore, container.ID));
+                await client.Containers.StartContainerAsync(container.ID, new ContainerStartParameters());
+
                 return;
             }
 
             var config = containerInfo.Config;
 
-            _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage, repository, opts.RestoreTag!);
+            _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_CreatingNewContainerFromBackupMessage, repository,
+                opts.RestoreTag!);
 
             _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_RemovingCurrentContainerMessage);
             await client.Containers.RemoveContainerAsync(container.ID, new ContainerRemoveParameters
@@ -223,7 +228,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                     Binds = containerInfo.HostConfig.Binds,
                     PortBindings = containerInfo.HostConfig.PortBindings,
                     RestartPolicy = containerInfo.HostConfig.RestartPolicy,
-                    VolumeDriver = containerInfo.HostConfig.VolumeDriver,
+
                     VolumesFrom = containerInfo.HostConfig.VolumesFrom,
                     NetworkMode = containerInfo.HostConfig.NetworkMode
                 }
@@ -233,7 +238,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
 
             _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_NewContainerCreatedMessage, response.ID);
 
-            if (container.State == "running")
+            if (originalContainerState == "running")
             {
                 _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_StartingRestoredContainerMessage);
                 await client.Containers.StartContainerAsync(response.ID, new ContainerStartParameters());
@@ -243,10 +248,49 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
             _logger.LogInfo(Strings.ContainerPatchAgent_RestoreMode_ContainerSuccessfullyRestoredFromBackupMessage);
         }
 
+        private async Task CopyOnlyMode(IDockerClient client, ExecutionProfile opts, ContainerListResponse container)
+        {
+            _logger.LogInfo(Errors.ContainerPatchAgent_CopyOnlyMode_RunningCopyOnlyModeMessage);
+            var originalContainerState = container.State;
+
+            if (originalContainerState == "running")
+            {
+                _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_StoppingContainerMessage);
+                await client.Containers.StopContainerAsync(container.ID, new ContainerStopParameters());
+                _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_ContainerStoppedMessage);
+            }
+
+            if (string.IsNullOrEmpty(opts.Input) || string.IsNullOrEmpty(opts.Output))
+            {
+                _logger.LogError(Errors.ContainerPatchAgent_CopyOnlyMode_InputOutputRequiredError);
+                return;
+            }
+
+            var inputPaths = ParseInputPaths(opts.Input);
+            if (!inputPaths.Any())
+            {
+                _logger.LogError(Errors.ContainerPatchAgent_CopyOnlyMode_NoValidInputPathsFoundError);
+                return;
+            }
+
+            _logger.LogInfo(Strings.ContainerPatchAgent_CopyOnlyMode_ParsedInputPathsMessage, inputPaths.Count);
+
+            await CopyFilesToContainer(client, container.ID, inputPaths, opts.Output);
+
+            _logger.LogInfo(Strings.ContainerPatchAgent_CopyOnlyMode_FilesCopiedToContainerMessage);
+             
+            if (originalContainerState == "running")
+            {
+                _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_RestartingContainerMessage);
+                await client.Containers.StartContainerAsync(container.ID, new ContainerStartParameters());
+                _logger.LogInfo(Strings.ContainerPatchAgent_ReplaceMode_ContainerRestartedMessage);
+            }
+        }
+
+
         private List<string> ParseInputPaths(string input)
         {
             var result = new List<string>();
-
             var paths = input.Split(',').Select(p => p.Trim());
 
             foreach (var path in paths)
@@ -261,7 +305,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                 }
                 else
                 {
-                    _logger.LogError(Errors.ContainerPatchAgent_ParseInputPaths_WarningPathNotFound, path);
+                    _logger.LogWarn(Errors.ContainerPatchAgent_ParseInputPaths_WarningPathNotFound, path);
                 }
             }
 
@@ -269,21 +313,30 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
         }
 
         private async Task CopyFilesToContainer(IDockerClient client, string containerId,
-            List<string> sourcePaths, string targetPath)
+            List<string> sourcePaths, string targetPathInContainer)
         {
-            _logger.LogInfo(Strings.ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage, sourcePaths.Count, targetPath);
+            _logger.LogInfo(Strings.ContainerPatchAgent_CopyFilesToContainer_CopyingFilesToContainerAtPathMessage,
+                sourcePaths.Count, targetPathInContainer);
 
             var tempTarPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName() + ".tar");
             try
             {
-                await using (var tarOutputStream = new TarOutputStream(File.Create(tempTarPath), Encoding.Unicode))
+                await using (var tarOutputStream = new TarOutputStream(File.Create(tempTarPath), Encoding.UTF8))
                 {
                     foreach (var sourcePath in sourcePaths)
-                    { 
-                        var relativePath = Path.GetFileName(sourcePath);
+                    {
+                        var fileInfo = new FileInfo(sourcePath);
+                        if (!fileInfo.Exists)
+                        {
+                            _logger.LogWarn(
+                                string.Format(Errors.ContainerPatchAgent_CopyFilesToContainer_SourceFileNotFound, sourcePath));
+                            continue;
+                        }
+
+                        var entryName = Path.GetFileName(sourcePath);
 
                         var entry = TarEntry.CreateEntryFromFile(sourcePath);
-                        entry.Name = relativePath;
+                        entry.Name = entryName;
 
                         tarOutputStream.PutNextEntry(entry);
 
@@ -293,8 +346,8 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                         }
 
                         tarOutputStream.CloseEntry();
-
-                        _logger.LogInfo(Strings.ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage, sourcePath, relativePath);
+                        _logger.LogInfo(Strings.ContainerPatchAgent_CopyFilesToContainer_AddedToTarMessage, sourcePath,
+                            entry.Name);
                     }
                 }
 
@@ -304,7 +357,7 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Agents
                         containerId,
                         new ContainerPathStatParameters
                         {
-                            Path = targetPath,
+                            Path = targetPathInContainer,
                             AllowOverwriteDirWithFile = true
                         },
                         tarStream);

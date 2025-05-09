@@ -357,4 +357,10 @@
   <data name="OptionsGroupWord" xml:space="preserve">
     <value>group</value>
   </data>
+  <data name="ContainerPatchAgent_CopyOnlyMode_FilesCopiedToContainerMessage" xml:space="preserve">
+    <value>Files successfully copied to container in copy-only mode.</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyOnlyMode_ParsedInputPathsMessage" xml:space="preserve">
+	  <value>Parsed {0} input path(s) for copy-only operation.</value>
+  </data>
 </root>

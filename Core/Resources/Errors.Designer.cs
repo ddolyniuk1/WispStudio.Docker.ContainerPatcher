@@ -61,6 +61,42 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source file not found, skipping: {0}.
+        /// </summary>
+        public static string ContainerPatchAgent_CopyFilesToContainer_SourceFileNotFound {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyFilesToContainer_SourceFileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input and Output paths are required for copy-only mode..
+        /// </summary>
+        public static string ContainerPatchAgent_CopyOnlyMode_InputOutputRequiredError {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyOnlyMode_InputOutputRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No valid input files or directories found for copy-only operation. Please check the Input path(s)..
+        /// </summary>
+        public static string ContainerPatchAgent_CopyOnlyMode_NoValidInputPathsFoundError {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyOnlyMode_NoValidInputPathsFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running in copy-only mode..
+        /// </summary>
+        public static string ContainerPatchAgent_CopyOnlyMode_RunningCopyOnlyModeMessage {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyOnlyMode_RunningCopyOnlyModeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error: Container &apos;{0}&apos; not found..
         /// </summary>
         public static string ContainerPatchAgent_ExecuteAsync_ContainerNotFoundError {
@@ -106,6 +142,15 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No operation specified. Please provide either a ReplaceTag, a RestoreTag, or both Input and Output paths for a copy-only operation..
+        /// </summary>
+        public static string ContainerPatchAgent_ExecuteAsync_NoOperationSpecifiedError {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_ExecuteAsync_NoOperationSpecifiedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error: Either --replace-tag or --restore-tag must be specified..
         /// </summary>
         public static string ContainerPatchAgent_ExecuteAsync_ReplaceTagOrRestoreTagUnspecifiedError {
@@ -138,6 +183,15 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         public static string ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError {
             get {
                 return ResourceManager.GetString("ContainerPatchAgent_ReplaceMode_NoValidInputPathsFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attempting to restart original container &apos;{0}&apos; as restore failed..
+        /// </summary>
+        public static string ContainerPatchAgent_RestoreMode_AttemptingToRestartContainerAsRestore {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_RestoreMode_AttemptingToRestartContainerAsRestore", resourceCulture);
             }
         }
         

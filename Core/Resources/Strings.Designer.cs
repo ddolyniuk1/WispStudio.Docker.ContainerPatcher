@@ -106,6 +106,24 @@ namespace WispStudios.Docker.ContainerPatcher.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Files successfully copied to container in copy-only mode..
+        /// </summary>
+        public static string ContainerPatchAgent_CopyOnlyMode_FilesCopiedToContainerMessage {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyOnlyMode_FilesCopiedToContainerMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parsed {0} input path(s) for copy-only operation..
+        /// </summary>
+        public static string ContainerPatchAgent_CopyOnlyMode_ParsedInputPathsMessage {
+            get {
+                return ResourceManager.GetString("ContainerPatchAgent_CopyOnlyMode_ParsedInputPathsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connected to Docker. Target container: {0}.
         /// </summary>
         public static string ContainerPatchAgent_ExecuteAsync_ConnectedMessage {

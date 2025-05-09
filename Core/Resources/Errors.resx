@@ -249,4 +249,22 @@
   <data name="Program_RunWithOptionsAsync_InvalidInput" xml:space="preserve">
 	  <value>Invalid input, please use --help for more details.</value>
   </data>
+  <data name="ContainerPatchAgent_CopyOnlyMode_NoValidInputPathsFoundError" xml:space="preserve">
+	  <value>No valid input files or directories found for copy-only operation. Please check the Input path(s).</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyOnlyMode_InputOutputRequiredError" xml:space="preserve">
+	  <value>Input and Output paths are required for copy-only mode.</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyOnlyMode_RunningCopyOnlyModeMessage" xml:space="preserve">
+	  <value>Running in copy-only mode.</value>
+  </data>
+  <data name="ContainerPatchAgent_ExecuteAsync_NoOperationSpecifiedError" xml:space="preserve">
+	  <value>No operation specified. Please provide either a ReplaceTag, a RestoreTag, or both Input and Output paths for a copy-only operation.</value>
+  </data>
+  <data name="ContainerPatchAgent_CopyFilesToContainer_SourceFileNotFound" xml:space="preserve">
+	  <value>Source file not found, skipping: {0}</value>
+  </data>
+  <data name="ContainerPatchAgent_RestoreMode_AttemptingToRestartContainerAsRestore" xml:space="preserve">
+	  <value>Attempting to restart original container '{0}' as restore failed.</value>
+  </data>
 </root>
